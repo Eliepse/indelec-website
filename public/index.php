@@ -1,7 +1,5 @@
 <?php
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -27,11 +25,6 @@ $app = AppFactory::create();
 
 $app->addRoutingMiddleware();
 
-$app->get('/', function (Request $request, Response $response, $args) {
-	$response->getBody()->write("<html><head><meta charset='UTF-8'><title>" . env("META_TITLE") . "</title></head>");
-	$response->getBody()->write("Hello world!");
-	$response->getBody()->write("</html>");
-	return $response;
-});
+include_once '../routes/web.php';
 
 $app->run();
