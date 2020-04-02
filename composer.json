@@ -4,6 +4,11 @@
         "slim/psr7": "^1.0",
         "vlucas/phpdotenv": "^4.1"
     },
+    "autoload": {
+        "psr-4": {
+            "App\\" : "app"
+        }
+    },
     "scripts": {
         "dev": "php -S localhost:8080 -t public"
     }
