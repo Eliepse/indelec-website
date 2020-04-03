@@ -33,7 +33,7 @@ if (!function_exists('webpack')) {
 	 */
 	function webpack(string $asset_path, ?string $default = null): string
 	{
-		$m_path = __DIR__ . '/../public/manifest.json';
+		$m_path = app()->public("manifest.json");
 		if (!file_exists($m_path)) {
 			if (!is_null($default)) return $default;
 			throw new ErrorException("Weback generated manifest (public/manifest.json) not found at $m_path.");

@@ -53,6 +53,30 @@ class App
 	}
 
 
+	public function root(string $path = ""): string
+	{
+		return __DIR__ . '/../' . $path;
+	}
+
+
+	public function resources(string $path = ""): string
+	{
+		return $this->root("resources/" . $path);
+	}
+
+
+	public function storage(string $path = ""): string
+	{
+		return $this->root("storage/" . $path);
+	}
+
+
+	public function public(string $path = ""): string
+	{
+		return $this->root("public/" . $path);
+	}
+
+
 	/**
 	 * @param string $asset_path Relative path of the asset
 	 * @param string|null $default

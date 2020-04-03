@@ -2,8 +2,10 @@
 /vendor/
 /logs/*
 /node_modules/
+/storage/cache/*
 /public/css
 /public/js
 /public/manifest.json
 
 .env
+!.gitkeep
