@@ -56,7 +56,6 @@ module.exports = (env, argv) => {
 		},
 		plugins: [
 			new CleanWebpackPlugin({
-				verbose: true,
 				protectWebpackAssets: false,
 				cleanOnceBeforeBuildPatterns: ['js/', 'css/', 'manifest.json'],
 				cleanAfterEveryBuildPatterns: ['css/*.js']
@@ -70,6 +69,21 @@ module.exports = (env, argv) => {
 		],
 		optimization: {
 			minimizer: []
+		},
+		performance: {
+			hints: "warning"
+		},
+		stats: {
+			excludeAssets: (name) => {
+				return name.match(/css\/.*\.js/)
+					|| name.match(/manifest\.json$/);
+			},
+			entrypoints: false,
+			excludeModules: true,
+			children: false,
+			hash: false,
+			version: false,
+			timings: false
 		}
 	};
 };
