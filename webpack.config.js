@@ -71,7 +71,7 @@ module.exports = (env, argv) => {
 			minimizer: []
 		},
 		performance: {
-			hints: "warning"
+			hints: isProd() ? "warning" : false,
 		},
 		stats: {
 			excludeAssets: (name) => {
