@@ -13,7 +13,6 @@ $app = AppFactory::create();
 
 App::setApp($app);
 
-include_once "../app/helpers.php";
 
 $app->addRoutingMiddleware();
 $app->addErrorMiddleware(app()->isLocal(), true, true);
