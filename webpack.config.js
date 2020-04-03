@@ -47,7 +47,7 @@ module.exports = (env, argv) => {
 					test: /\.scss$/,
 					use: [
 						{loader: MiniCssExtractPlugin.loader, options: {sourceMap: !isProd()}},
-						{loader: 'css-loader', options: {modules: true, importLoaders: 1, sourceMap: !isProd()}},
+						{loader: 'css-loader', options: {importLoaders: 1, sourceMap: !isProd()}},
 						{loader: 'postcss-loader', options: {sourceMap: !isProd()}},
 						{loader: 'sass-loader', options: {sourceMap: !isProd()}},
 					],
