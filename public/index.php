@@ -22,6 +22,20 @@ if (!function_exists("env")) {
 	}
 }
 
+if (!function_exists('webpack')) {
+	/**
+	 * @param string $asset_path
+	 * @param string|null $default
+	 *
+	 * @return string
+	 * @throws ErrorException
+	 */
+	function webpack(string $asset_path, ?string $default = null): string
+	{
+		return App::webpack($asset_path, $default);
+	}
+}
+
 $app = AppFactory::create();
 
 App::setApp($app);
