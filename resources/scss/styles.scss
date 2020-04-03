@@ -5,15 +5,15 @@ The order maters!
  */
 
 // Base styles, variables, ...
-@import "facelift";
-@import "root";
-@import "colors";
-@import "fonts";
+@import "bedrock/facelift";
+@import "bedrock/root";
+@import "bedrock/fonts";
+@import "bedrock/colors";
 @import "variables";
-@import "text";
+@import "bedrock/text";
 
 // Components
 // ...
 
 // Pages
-@import "welcome";
+@import "pages/welcome";
