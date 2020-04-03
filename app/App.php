@@ -4,16 +4,33 @@ namespace App;
 
 use Error;
 use ErrorException;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
+use Twig\TwigFunction;
 
 class App
 {
 	private static self $_instance;
+
 	private \Slim\App $app;
+	private FilesystemLoader $twig_fs;
+	private Environment $twig_env;
 
 
 	private function __construct(\Slim\App $app)
 	{
 		$this->app = $app;
+		$this->twig_fs = new FilesystemLoader($this->resources("views"));
+		$this->twig_env = new Environment(
+			$this->twig_fs,
+			[
+				'cache' => $this->isProd() ? $this->storage("cache/views") : false,
+				'debug' => $this->isLocal() && env("APP_DEBUG", false),
+				'strict_variables' => true
+			]);
+		$this->twig_env->addFunction(new TwigFunction("webpack", "webpack"));
+		$this->twig_env->addFunction(new TwigFunction("app", "app"));
+		$this->twig_env->addFunction(new TwigFunction("env", "env"));
 	}
 
 
@@ -38,6 +55,12 @@ class App
 	public function getApp(): \Slim\App
 	{
 		return $this->app;
+	}
+
+
+	public function getTwigEnvironment(): Environment
+	{
+		return $this->twig_env;
 	}
 
 

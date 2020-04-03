@@ -48,3 +48,11 @@ if (!function_exists('webpack')) {
 		return $manifest[ $asset_path ];
 	}
 }
+
+if (!function_exists("view")) {
+	function view(string $name, array $values = []): string
+	{
+		$name .= pathinfo($name, PATHINFO_EXTENSION) ?: ".twig";
+		return app()->getTwigEnvironment()->render($name, $values);
+	}
+}
