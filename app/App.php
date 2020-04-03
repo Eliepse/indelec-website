@@ -7,28 +7,47 @@ use ErrorException;
 
 class App
 {
-	public static \Slim\App $app;
+	private static self $_instance;
+	private \Slim\App $app;
+
+
+	private function __construct(\Slim\App $app)
+	{
+		$this->app = $app;
+	}
 
 
 	public static function setApp(\Slim\App $app)
 	{
-		self::$app = $app;
+		self::$_instance = new self($app);
 	}
 
 
-	public static function getApp(): \Slim\App
+	/**
+	 * @return static
+	 * @throws ErrorException
+	 */
+	public static function getInstance(): self
 	{
-		return self::$app;
+		if (empty(self::$_instance))
+			throw new ErrorException(self::class . "has not been initialized.");
+		return self::$_instance;
 	}
 
 
-	public static function isProd(): bool
+	public function getApp(): \Slim\App
+	{
+		return $this->app;
+	}
+
+
+	public function isProd(): bool
 	{
 		return env("APP_ENV") === "production";
 	}
 
 
-	public static function isLocal(): bool
+	public function isLocal(): bool
 	{
 		return env("APP_ENV") === "local";
 	}
@@ -41,7 +60,7 @@ class App
 	 * @return string
 	 * @throws ErrorException
 	 */
-	public static function webpack(string $asset_path, ?string $default = null): string
+	public function webpack(string $asset_path, ?string $default = null): string
 	{
 		$m_path = __DIR__ . '/../public/manifest.json';
 		if (!file_exists($m_path)) {
