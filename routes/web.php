@@ -10,9 +10,18 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 
 $app->get('/', function (Request $request, Response $response, $args) {
-	$response->getBody()->write("<html lang='fr'>"
-		. "<head><meta charset='UTF-8'><title>" . env("META_TITLE") . "</title></head>"
-		. "<body>Hello world!</body>"
-		. "</html>");
+	$response->getBody()->write(
+		"<!DOCTYPE html>\n"
+		. '<html lang="fr">'. "\n"
+		. "<head>\n"
+		. '<meta charset="UTF-8">' . "\n"
+		. "<title>" . env("META_TITLE") . "</title>\n"
+		. "<link href='" . webpack("css/styles.css", "") . "' rel='stylesheet' type='text/css' />\n"
+		. "</head>\n"
+		. "<body>\n"
+		. "\tHello world!\n"
+		. "\t<script src='" . webpack("js/index.js", "") . "'></script>\n"
+		. "</body>\n"
+		. "</html>\n");
 	return $response;
 });
