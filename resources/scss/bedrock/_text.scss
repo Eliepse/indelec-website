@@ -5,7 +5,8 @@ It's not a place where to tweak variables, use _variables.scss for that purpose.
 
 html, body {
 	background: $color-gray-0;
-	font-size: 1.6rem;
-	font-family: sans-serif;
+	font-size: $font-size;
+	//font-family: sans-serif;
+	line-height: $line-height;
 	color: $text-dark;
 }
