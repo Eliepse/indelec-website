@@ -5,6 +5,7 @@
 /storage/cache/*
 /public/css
 /public/js
+/public/img
 /public/manifest.json
 
 .env

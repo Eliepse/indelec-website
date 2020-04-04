@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const MinifyJsPlugin = require("babel-minify-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const entries = {};
 const moduleScss = [];
@@ -61,6 +63,16 @@ module.exports = (env, argv) => {
 				cleanAfterEveryBuildPatterns: ['css/*.js']
 			}),
 			new StylelintPlugin(),
+			new CopyPlugin([{from: 'img', to: 'img'},], {context: "resources/"}),
+			new ImageminPlugin({
+				test: /\.(jpe?g|png|gif|svg)$/i,
+				disable: !isProd(),
+				svgo: {
+					plugins: [
+						{removeTitle: false}
+					]
+				}
+			}),
 			...plugins,
 			new MiniCssExtractPlugin({filename: isProd() ? '[name].[contentHash].css' : '[name].css',}),
 			new ManifestPlugin({
@@ -76,7 +88,8 @@ module.exports = (env, argv) => {
 		stats: {
 			excludeAssets: (name) => {
 				return name.match(/css\/.*\.js/)
-					|| name.match(/manifest\.json$/);
+					|| name.match(/manifest\.json$/)
+					|| name.match(/\.(jpe?g|png|gif|svg)$/i);
 			},
 			entrypoints: false,
 			excludeModules: true,
