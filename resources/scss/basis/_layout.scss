@@ -1,0 +1,17 @@
+/*
+Layout
+ */
+
+.container {
+	margin: 0 auto;
+	//max-width: $container-maxWidth;
+}
+
+main {
+	margin-top: 15rem;
+	transition: margin-top $transition-time-fast;
+}
+
+.scrolled main {
+	margin-top: 8.5rem;
+}

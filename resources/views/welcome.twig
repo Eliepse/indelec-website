@@ -6,7 +6,11 @@
 	<link rel="stylesheet" href="{{ webpack("css/styles.css") }}" type="text/css">
 </head>
 <body>
-<h1>{{ name }}</h1>
+{% include "components/navigation.twig" %}
+<main>
+	<h1>{{ name }}</h1>
+</main>
+{% include "components/footer.twig" %}
 <script src="{{ webpack("js/index.js") }}"></script>
 </body>
 </html>

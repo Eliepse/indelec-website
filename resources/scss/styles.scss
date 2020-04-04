@@ -8,8 +8,11 @@ The order maters!
 @import "bedrock/bedrock";
 @import "variables";
 
+// Basis
+@import "basis/layout";
+
 // Components
-// ...
+@import "components/navigation";
 
 // Pages
 @import "pages/welcome";

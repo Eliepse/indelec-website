@@ -3,3 +3,9 @@ This file contains your global viriables.
 If you want to change bedrocks configuration,
 use bedrock/_config.scss instead.
  */
+
+//$container-maxWidth: 192rem;
+
+$transition-time-fast: 150ms;
+$transition-time-medium: 300ms;
+$transition-time-slow: 500ms;
