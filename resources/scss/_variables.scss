@@ -22,7 +22,19 @@ $media-res-standard: 72dpi;
 	}
 }
 
-@media screen and (max-width: $media-small + 100px) and (max-resolution: $media-res-retina) {
+@media screen and (max-width: $media-small + 100px) {
+	html, body {
+		font-size: 1.6rem;
+	}
+}
+
+@media screen and (max-width: $media-small) {
+	html, body {
+		font-size: 1.8rem;
+	}
+}
+
+@media screen and (max-width: $media-small - 200px) {
 	html, body {
 		font-size: 1.6rem;
 	}
