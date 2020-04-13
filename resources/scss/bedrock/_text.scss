@@ -4,9 +4,16 @@ It's not a place where to tweak variables, use _variables.scss for that purpose.
  */
 
 html, body {
-	background: $color-gray-0;
+	background: $background-default;
 	font-size: $font-size;
-	//font-family: sans-serif;
+	font-family: Jost, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
 	line-height: $line-height;
 	color: $text-dark;
+}
+
+p {
+	margin-bottom: 1.83em;
+	font-size: 1em;
+	line-height: 1.58;
+	color: $color-text;
 }

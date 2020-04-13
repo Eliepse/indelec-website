@@ -7,15 +7,17 @@ This file define the style of the main navigation bar
 	top: 0;
 	left: 0;
 	right: 0;
-	font-size: 2.2rem;
+	padding: 0 5rem;
+	font-size: .917em;
 	background-color: $color-white;
-	border-bottom: 1px solid $color-gray-3;
+	border-bottom: 2px solid $color-gray-2;
+	z-index: 50;
 
 	.container {
+		margin: 0 auto;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin: 0 10rem;
 	}
 }
 
@@ -23,7 +25,7 @@ This file define the style of the main navigation bar
 	display: flex;
 	align-items: center;
 	justify-content: right;
-	line-height: 3.2rem;
+	line-height: 1.45em;
 }
 
 .navigation__item {
@@ -31,7 +33,7 @@ This file define the style of the main navigation bar
 
 	a {
 		display: inline-block;
-		padding: 6rem 2.9rem;
+		padding: 6rem 1.32em;
 		transition: padding $transition-time-medium;
 	}
 
@@ -45,7 +47,8 @@ This file define the style of the main navigation bar
 
 .navigation__logo {
 	width: auto;
-	height: 8.6rem;
+	height: 3.91em;
+	font-size: 1em;
 	transition: height $transition-time-medium;
 }
 
@@ -56,22 +59,14 @@ This file define the style of the main navigation bar
 	}
 
 	.navigation__logo {
-		height: 4.6rem;
+		//height: 4.6rem;
+		font-size: .535em;
 	}
 }
 
-@media screen and (max-width: 1260px) {
-	.navigation .container {
-		margin: 0 5rem;
-	}
-
-	.navigation__logo {
-		height: 6rem;
-	}
-
+@media screen and (max-width: $media-medium) {
 	.navigation__item a {
-		padding-top: 4rem;
-		padding-bottom: 4rem;
+		padding: 4rem 1em;
 	}
 
 	.scrolled {
@@ -79,9 +74,36 @@ This file define the style of the main navigation bar
 			padding-top: 2rem;
 			padding-bottom: 2rem;
 		}
+	}
+}
 
-		.navigation__logo {
-			height: 3.8rem;
+@media (max-width: $media-small) {
+	.navigation {
+		padding: 0;
+
+		.container {
+			max-width: 60rem;
+			flex-direction: column;
 		}
+	}
+
+	.navigation__logo {
+		margin: 1.5em 0 1.5em 0;
+		//height: 5rem;
+	}
+
+	.navigation__list {
+		width: 100%;
+		justify-content: stretch;
+	}
+
+	.navigation__item {
+		display: block;
+		flex: 1;
+	}
+
+	.navigation__item a {
+		width: 100%;
+		padding: 1em 0;
 	}
 }

@@ -1,0 +1,20 @@
+/*
+Helpers
+ */
+
+.hide--mobile {
+	display: inherit;
+}
+
+.show--mobile {
+	display: none;
+}
+
+@media (max-width: $media-small) {
+	.hide--mobile {
+		display: none;
+	}
+	.show--mobile {
+		display: inherit;
+	}
+}

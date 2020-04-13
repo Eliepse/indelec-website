@@ -1,3 +1,26 @@
 /*
 Define your @font-face here
+TODO: convert fonts to woff and woff2
+TODO: reduce unicode sets
  */
+
+@font-face {
+	font-family: Jost;
+	src: url("/fonts/Jost-300-Light.otf");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Jost;
+	src: url("/fonts/Jost-400-Book.otf");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Jost;
+	src: url("/fonts/Jost-700-Bold.otf");
+	font-weight: 700;
+	font-style: normal;
+}

@@ -3,8 +3,9 @@ Layout
  */
 
 .container {
+	position: relative;
 	margin: 0 auto;
-	//max-width: $container-maxWidth;
+	max-width: $container-maxWidth;
 }
 
 main {
@@ -14,4 +15,20 @@ main {
 
 .scrolled main {
 	margin-top: 8.5rem;
+}
+
+@media screen and (max-width: $media-medium) {
+	main {
+		margin-top: 10rem;
+	}
+}
+
+@media (max-width: $media-small) {
+	.container {
+		margin: 0 2.5rem;
+	}
+
+	main {
+		margin-top: 13.5rem;
+	}
 }

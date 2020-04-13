@@ -7,3 +7,5 @@ function checkScroll() {
 		document.body.classList.remove('scrolled');
 	}
 }
+
+checkScroll();

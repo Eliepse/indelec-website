@@ -63,7 +63,7 @@ module.exports = (env, argv) => {
 				cleanAfterEveryBuildPatterns: ['css/*.js']
 			}),
 			new StylelintPlugin(),
-			new CopyPlugin([{from: 'img', to: 'img'},], {context: "resources/"}),
+			new CopyPlugin([{from: 'img', to: 'img'},{from: 'fonts', to: 'fonts'},], {context: "resources/"}),
 			new ImageminPlugin({
 				test: /\.(jpe?g|png|gif|svg)$/i,
 				disable: !isProd(),
