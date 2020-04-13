@@ -1,7 +1,9 @@
-module.exports = ({ file, options, env }) => ({
+module.exports = ({file, options, env}) => ({
+	parser: false,
+	map: env !== 'production',
 	plugins: {
 		'autoprefixer': {},
 		'postcss-preset-env': {},
-		'cssnano': env === 'production' ? options.cssnano : false
+		'cssnano': env === 'production' ? {} : false
 	}
 });

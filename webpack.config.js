@@ -48,22 +48,38 @@ module.exports = (env, argv) => {
 				{
 					test: /\.scss$/,
 					use: [
-						{loader: MiniCssExtractPlugin.loader, options: {sourceMap: !isProd()}},
-						{loader: 'css-loader', options: {importLoaders: 1, sourceMap: !isProd()}},
-						{loader: 'postcss-loader', options: {sourceMap: !isProd()}},
-						{loader: 'sass-loader', options: {sourceMap: !isProd()}},
+						{loader: MiniCssExtractPlugin.loader},
+						{loader: 'css-loader', options: {url: true, importLoaders: 1}},
+						{loader: 'postcss-loader'},
+						{loader: 'sass-loader'},
 					],
+				},
+				{
+					test: /\.(png|jpe?g|gif|svg)$/i,
+					loader: 'file-loader',
+					options: {
+						outputPath: '/images/',
+						name: isProd() ? '[name].[contentHash].[ext]' : '[name].[ext]',
+					}
+				},
+				{
+					test: /\.(eot|otf|ttf|woff|woff2)$/i,
+					loader: 'file-loader',
+					options: {
+						outputPath: '/fonts/',
+						name: isProd() ? '[name].[contentHash].[ext]' : '[name].[ext]',
+					}
 				},
 			]
 		},
 		plugins: [
 			new CleanWebpackPlugin({
 				protectWebpackAssets: false,
-				cleanOnceBeforeBuildPatterns: ['js/', 'css/', 'manifest.json'],
+				cleanOnceBeforeBuildPatterns: ['js/', 'css/', 'fonts/', 'images/', 'img/', 'manifest.json'],
 				cleanAfterEveryBuildPatterns: ['css/*.js']
 			}),
 			new StylelintPlugin(),
-			new CopyPlugin([{from: 'img', to: 'img'},{from: 'fonts', to: 'fonts'},], {context: "resources/"}),
+			new CopyPlugin([{from: 'img', to: 'img'}], {context: "resources/"}),
 			new ImageminPlugin({
 				test: /\.(jpe?g|png|gif|svg)$/i,
 				disable: !isProd(),
@@ -76,7 +92,7 @@ module.exports = (env, argv) => {
 			...plugins,
 			new MiniCssExtractPlugin({filename: isProd() ? '[name].[contentHash].css' : '[name].css',}),
 			new ManifestPlugin({
-				filter: (file) => !file.name.match(/css\/.*\.js/)
+				filter: (file) => file.name.match(/^css\/.*\.css$/) || file.name.match(/^js\/.*\.js$/)
 			})
 		],
 		optimization: {
@@ -89,6 +105,7 @@ module.exports = (env, argv) => {
 			excludeAssets: (name) => {
 				return name.match(/css\/.*\.js/)
 					|| name.match(/manifest\.json$/)
+					|| name.match(/\.(eot|otf|ttf|woff|woff2)$/i)
 					|| name.match(/\.(jpe?g|png|gif|svg)$/i);
 			},
 			entrypoints: false,
