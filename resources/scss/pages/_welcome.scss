@@ -2,14 +2,164 @@
 Styles for the welcome page
  */
 
+//$title-maxWidth: 15.125em;
+
 main {
 	display: flex;
-	height: 100vh;
 	align-items: center;
 	justify-content: center;
 }
 
-h1 {
-	font-weight: normal;
-	font-size: 4em;
+.welcome__header {
+	position: relative;
+	width: 100%;
+	margin-bottom: $section-marginBottom;
+}
+
+.welcome_hero {
+	height: 80vh;
+	max-height: 55rem;
+	padding: 0 5rem;
+	background-image: url("/img/tableau-electrique-1.jpg");
+	background-position: center;
+	background-size: cover;
+
+	> div {
+		height: 100%;
+	}
+}
+
+.welcome__title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	max-width: 15.125em;
+	padding: 4.4rem 6rem 5.7rem 6rem;
+	//font-size: 4.8rem;
+	font-size: 2em;
+	font-weight: 300;
+	line-height: 1.27em;
+	color: $color-white;
+	background-color: $indelec-pink;
+	transform: translateX(-3rem) translateY(15rem);
+}
+
+.welcome__header-content {
+	display: flex;
+	flex-direction: row;
+}
+
+.welcome__intro {
+	margin-top: 22.6rem;
+	max-width: 20.74em;
+	//font-size: 3.5rem;
+	font-size: 1.46em;
+	line-height: 1.37;
+	padding-left: 2em;
+	padding-right: 2.46em;
+
+	p {
+		margin-bottom: 1.43em;
+	}
+
+	img {
+		width: 2em;
+	}
+}
+
+.welcome__services {
+	ul {
+		margin: 7.6rem 6.4rem 0;
+	}
+
+	h3 {
+		margin-bottom: .42em;
+		line-height: 1.25;
+		font-weight: 700;
+		color: $indelec-pink;
+	}
+}
+
+.welcome__header-logos {
+	height: 15rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		margin: 0 2rem;
+	}
+}
+
+@media screen and (max-width: $media-medium) {
+	.welcome__title {
+		max-width: 16em;
+	}
+	.welcome__intro {
+		max-width: 22.7em;
+	}
+	.welcome__header-logos img {
+		max-width: 7rem;
+		max-height: 6.5rem;
+	}
+}
+
+@media screen and (max-width: $media-medium - 130px) {
+	.welcome__services ul {
+		margin-left: 0;
+	}
+
+	.welcome__header-logos img {
+		max-width: 6rem;
+		max-height: 5.5rem;
+		margin: 0 1rem;
+	}
+}
+
+@media (max-width: $media-small) {
+	.welcome_hero {
+		max-height: 37rem;
+		padding: 0;
+	}
+
+	.welcome__title {
+		margin: 0 -1rem;
+		max-width: none;
+		padding: 3rem;
+		font-size: 1.5em;
+		transform: translateX(0) translateY(5.5rem);
+	}
+
+	.welcome__header-content {
+		flex-direction: column;
+	}
+
+	.welcome__intro {
+		max-width: none;
+		margin-top: 8.5rem;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.welcome__header-logos {
+		height: auto;
+		margin: 6.4rem 0;
+
+		img {
+			margin: 0 2rem;
+		}
+	}
+
+	.welcome__services {
+		text-align: center;
+
+		ul {
+			margin: 0 1.5em;
+		}
+
+		p {
+			margin-bottom: 4em;
+		}
+	}
 }
