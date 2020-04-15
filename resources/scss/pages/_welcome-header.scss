@@ -35,6 +35,11 @@ Styles for the welcome page
 	color: $color-white;
 	background-color: $indelec-pink;
 	transform: translateX(-3rem) translateY(15rem);
+
+	&::selection {
+		color: $indelec-lightPink;
+		background-color: $color-white;
+	}
 }
 
 .welcome__header-content {
@@ -52,6 +57,7 @@ Styles for the welcome page
 	top: -13rem;
 	right: -24rem;
 	z-index: -1;
+	user-select: none;
 }
 
 .welcome__intro {
@@ -70,6 +76,10 @@ Styles for the welcome page
 .welcome__services {
 	ul {
 		margin: 7.6rem 0 0 6.4rem;
+
+		li:last-child p {
+			margin-bottom: 0;
+		}
 	}
 
 	h3 {

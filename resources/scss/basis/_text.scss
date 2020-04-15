@@ -2,6 +2,11 @@
 Basis: text
  */
 
+::selection {
+	color: $color-white;
+	background-color: $indelec-lightPink;
+}
+
 strong {
 	font-weight: $fontWeigth-Bold;
 }
