@@ -1,12 +1,15 @@
 {
     "parser" : "babel-eslint",
     "parserOptions" : {
-        "sourceType" : "script",
+        "sourceType" : "module",
         "impliedStrict" : true
     },
     "env" : {
         "browser" : true,
         "es6" : true
+    },
+    "rules" : {
+        "semi" : "warn"
     },
     "extends" : "eslint:recommended"
 }
