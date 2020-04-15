@@ -7,7 +7,6 @@ This file define the style of the main navigation bar
 	top: 0;
 	left: 0;
 	right: 0;
-	padding: 0 5rem;
 	font-size: .917em;
 	background-color: $color-white;
 	border-bottom: 2px solid $color-gray-2;
@@ -78,13 +77,10 @@ This file define the style of the main navigation bar
 }
 
 @media (max-width: $media-small) {
-	.navigation {
+	.navigation .container {
 		padding: 0;
-
-		.container {
-			max-width: 60rem;
-			flex-direction: column;
-		}
+		max-width: 60rem;
+		flex-direction: column;
 	}
 
 	.navigation__logo {

@@ -7,7 +7,7 @@ Styles for the welcome page
 .welcome__qualifelec {
 	position: absolute;
 	bottom: 0;
-	left: 0;
+	left: $container-safeMargin;
 	margin-bottom: 3.66em;
 	line-height: 1.375;
 
@@ -17,7 +17,21 @@ Styles for the welcome page
 }
 
 @media screen and (max-width: $media-small) {
-	.welcome__qualifelec {
+	.section {
+		margin-bottom: 6.4rem;
+	}
 
+	.welcome__qualifelec {
+		padding: 2.2rem 1.4rem;
+		margin: 3.2rem 0 0 0;
+		position: initial;
+		text-align: center;
+		color: $color-white;
+		background-color: $color-blue;
+		font-size: 1.4rem;
+
+		strong {
+			font-size: 1.6rem;
+		}
 	}
 }

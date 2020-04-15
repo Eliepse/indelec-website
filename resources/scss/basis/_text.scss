@@ -9,3 +9,9 @@ strong {
 .text--blue {
 	color: $color-blue;
 }
+
+@media (max-width: $media-small) {
+	p {
+		margin-bottom: 1em;
+	}
+}

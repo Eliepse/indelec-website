@@ -5,7 +5,10 @@ use bedrock/_config.scss instead.
  */
 
 $container-maxWidth: 124rem;
-$section-marginBottom: 15rem;
+$container-safeMargin: 5rem;
+$container-mobileSafeMargin: 2.5rem;
+$section-margin: 15rem;
+$section-mobileMargin: 6.4rem;
 
 $transition-time-fast: 150ms;
 $transition-time-medium: 300ms;

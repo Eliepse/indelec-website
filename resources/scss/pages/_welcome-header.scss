@@ -5,7 +5,6 @@ Styles for the welcome page
 .welcome__header {
 	position: relative;
 	width: 100%;
-	margin-bottom: $section-marginBottom;
 }
 
 .welcome_hero {
@@ -60,7 +59,7 @@ Styles for the welcome page
 	max-width: 20.74em;
 	font-size: 1.46em;
 	line-height: 1.37;
-	padding-left: 2em;
+	padding-left: 0;
 	padding-right: 2.46em;
 
 	p {
@@ -70,7 +69,7 @@ Styles for the welcome page
 
 .welcome__services {
 	ul {
-		margin: 7.6rem 6.4rem 0;
+		margin: 7.6rem 0 0 6.4rem;
 	}
 
 	h3 {

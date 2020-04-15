@@ -9,7 +9,8 @@ html {
 .container {
 	position: relative;
 	margin: 0 auto;
-	max-width: $container-maxWidth;
+	max-width: $container-maxWidth + $container-safeMargin;
+	padding: 0 $container-safeMargin;
 }
 
 main {
@@ -29,7 +30,8 @@ main {
 
 @media (max-width: $media-small) {
 	.container {
-		margin: 0 2.5rem;
+		margin: 0 $container-mobileSafeMargin;
+		padding: 0;
 	}
 
 	main {
