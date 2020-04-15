@@ -1,3 +1,7 @@
+"use strict";
+
+import "./lib/caroussel";
+
 window.addEventListener('scroll', checkScroll);
 
 function checkScroll() {

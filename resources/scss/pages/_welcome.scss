@@ -16,6 +16,35 @@ Styles for the welcome page
 	}
 }
 
+.welcome__quotes {
+	text-align: center;
+
+	blockquote {
+		font-size: 2.8rem;
+		font-weight: $fontWeigth-Bold;
+		line-height: 1.429;
+		color: $color-blue;
+	}
+
+	cite {
+		display: block;
+		height: 4.8rem;
+		margin-top: 4em;
+		font-size: .5em;
+		font-weight: $fontWeigth-Book;
+		font-style: normal;
+		line-height: 1.714;
+		color: $color-text-light;
+	}
+
+	.caroussel__arrow {
+		display: flex;
+		align-items: center;
+		padding: 0 1em;
+		height: 4.8rem;
+	}
+}
+
 @media screen and (max-width: $media-mobile) {
 	.section {
 		margin-bottom: 6.4rem;

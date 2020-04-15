@@ -1,0 +1,70 @@
+/*
+Caroussel
+ */
+
+.caroussel {
+	position: relative;
+	max-width: 72rem;
+	margin: auto;
+	padding-top: 5.8rem;
+	padding-left: 2.2rem;
+	background: url("../img/caroussel/quote-left.svg") no-repeat top left;
+	background-size: 14.9rem 11.8rem;
+}
+
+.caroussel__content {
+	overflow: hidden;
+}
+
+.caroussel__list {
+	position: relative;
+	left: 0;
+	display: flex;
+	flex-wrap: nowrap;
+	transition: left $transition-time-medium;
+}
+
+.caroussel__item {
+	padding: 0 2rem;
+	min-width: 100%;
+}
+
+.caroussel__controls {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.caroussel__arrow {
+	padding: 1em;
+	cursor: pointer;
+	transform: translateX(0);
+	transition: transform $transition-time-fast;
+	user-select: none;
+}
+
+.caroussel__arrow--left {
+	&:hover,
+	&:focus {
+		transform: translateX(-.25em);
+	}
+
+	&:active {
+		transform: translateX(-.4em);
+		transition: transform 0s;
+	}
+}
+
+.caroussel__arrow--right {
+	&:hover,
+	&:focus {
+		transform: translateX(.25em);
+	}
+
+	&:active {
+		transform: translateX(.4em);
+		transition: transform 0s;
+	}
+}
