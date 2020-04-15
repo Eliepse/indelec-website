@@ -16,6 +16,7 @@ $transition-time-slow: 500ms;
 
 $media-medium: 1152px;
 $media-small: 768px;
+$media-mobile: 568px;
 $media-res-retina: 264dpi;
 $media-res-standard: 72dpi;
 
@@ -37,7 +38,7 @@ $media-res-standard: 72dpi;
 	}
 }
 
-@media screen and (max-width: $media-small - 200px) {
+@media screen and (max-width: $media-mobile) {
 	html, body {
 		font-size: 1.6rem;
 	}
