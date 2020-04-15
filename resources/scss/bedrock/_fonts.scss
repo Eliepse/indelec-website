@@ -4,23 +4,27 @@ TODO: convert fonts to woff and woff2
 TODO: reduce unicode sets
  */
 
+$fontWeigth-Light: 300;
+$fontWeigth-Book: 400;
+$fontWeigth-Bold: 700;
+
 @font-face {
 	font-family: Jost;
 	src: url("../fonts/Jost-300-Light.otf");
-	font-weight: 300;
+	font-weight: $fontWeigth-Light;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: Jost;
 	src: url("../fonts/Jost-400-Book.otf");
-	font-weight: 400;
+	font-weight: $fontWeigth-Book;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: Jost;
 	src: url("../fonts/Jost-700-Bold.otf");
-	font-weight: 700;
+	font-weight: $fontWeigth-Bold;
 	font-style: normal;
 }
