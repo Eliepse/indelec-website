@@ -1,0 +1,38 @@
+.section {
+	margin-bottom: $section-marginBottom;
+}
+
+.section__figure {
+}
+
+.section__figure--full {
+	margin-bottom: 10rem;
+}
+
+.section__content {
+}
+
+.section__content--col {
+	display: flex;
+	flex-direction: row;
+
+	> div {
+		flex: 1;
+		margin: 0 2rem;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.section__title {
+	font-size: 4.8rem;
+	font-weight: $fontWeigth-Light;
+	line-height: 1.27;
+	color: $indelec-pink;
+}

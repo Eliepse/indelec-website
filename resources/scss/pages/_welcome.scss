@@ -4,11 +4,20 @@ Styles for the welcome page
 
 @import "welcome-header";
 
-@media screen and (max-width: $media-medium) {
-}
+.welcome__qualifelec {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin-bottom: 3.66em;
+	line-height: 1.375;
 
-@media screen and (max-width: $media-medium - 130px) {
+	strong {
+		line-height: 2.1;
+	}
 }
 
 @media screen and (max-width: $media-small) {
+	.welcome__qualifelec {
+
+	}
 }
