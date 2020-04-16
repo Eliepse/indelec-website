@@ -59,3 +59,18 @@ textarea.form__control {
 	line-height: 1.36;
 	font-weight: $fontWeigth-Light;
 }
+
+@media (max-width: $media-small) {
+	.form {
+		padding: 3rem;
+		font-size: 1em;
+	}
+
+	.form__submit {
+		width: 100%;
+	}
+
+	.form__legal {
+		font-size: 1em;
+	}
+}

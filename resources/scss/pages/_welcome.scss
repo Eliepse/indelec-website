@@ -136,6 +136,21 @@ Styles for the welcome page
 	margin-bottom: 0;
 }
 
+
+@media screen and (max-width: $media-small) {
+	.welcome__contact {
+		padding-bottom: $container-mobileSafeMargin;
+
+		form {
+			margin: 0 -1rem;
+		}
+	}
+	.welcome__contact-info > * {
+		margin-bottom: 5rem;
+	}
+}
+
+
 @media screen and (max-width: $media-mobile) {
 	.section {
 		margin-bottom: 6.4rem;
