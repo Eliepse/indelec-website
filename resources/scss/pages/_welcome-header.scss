@@ -12,8 +12,8 @@ Styles for the welcome page
 	height: 80vh;
 	max-height: 55rem;
 	padding: 0 5rem;
-	background-image: url("../img/tableau-electrique-1.jpg");
-	background-position: center;
+	//noinspection CssUnknownTarget
+	background: url("../img/tableau-electrique-1.jpg") center;
 	background-size: cover;
 	z-index: 10;
 

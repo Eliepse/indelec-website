@@ -12,10 +12,13 @@ html, body {
 }
 
 p {
-	margin-bottom: 1.83em;
 	font-size: 1em;
 	line-height: 1.58;
 	color: $color-text;
+}
+
+p + p {
+	margin-top: 1.83em;
 }
 
 strong {
