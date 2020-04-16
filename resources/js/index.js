@@ -12,4 +12,10 @@ function checkScroll() {
 	}
 }
 
+function unfakemail($link) {
+	const html = $link.innerHTML;
+	$link.href = "mailto:" + html.replace(/(<!--.*-->|<span[a-z=": ;]*>.*<\/span>)+/gi, "");
+}
+
 checkScroll();
+document.querySelectorAll("a[fakemail]").forEach($link => unfakemail($link));

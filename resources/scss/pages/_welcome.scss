@@ -97,6 +97,45 @@ Styles for the welcome page
 	}
 }
 
+.welcome__contact {
+	overflow: visible;
+
+	.section__content > div {
+		margin: 0;
+		text-align: center;
+	}
+
+	.section__title {
+		color: $color-white;
+	}
+
+	form {
+		margin-top: -14.4rem;
+		margin-bottom: -14.4rem;
+		box-shadow: 0 2px 25px rgba(79, 79, 79, 0.2);
+	}
+}
+
+.welcome__contact-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&,
+	address {
+		font-style: normal;
+	}
+
+	a {
+		padding: 0;
+		color: $color-white;
+	}
+}
+
+.welcome__contact-legal {
+	margin-bottom: 0;
+}
+
 @media screen and (max-width: $media-mobile) {
 	.section {
 		margin-bottom: 6.4rem;
