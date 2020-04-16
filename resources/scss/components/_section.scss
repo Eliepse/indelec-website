@@ -5,13 +5,21 @@
 	overflow: hidden;
 }
 
-.section--bokenWhite {
-	background-color: $color-white-broken;
-
+.section--bokenWhite,
+.section--pink {
 	.section__content {
 		margin-top: 8.5rem;
 		margin-bottom: 4rem;
 	}
+}
+
+.section--bokenWhite {
+	background-color: $color-white-broken;
+}
+
+.section--pink {
+	background-color: $indelec-pink;
+	color: $color-white;
 }
 
 .section__figure {

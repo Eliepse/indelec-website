@@ -55,6 +55,48 @@ Styles for the welcome page
 	}
 }
 
+.welcome__logos {
+	display: flex;
+	max-width: 80rem;
+	margin: 10rem auto 0 auto;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	font-size: 1.5rem;
+	text-align: center;
+	line-height: 1.33;
+	color: $color-text-light;
+
+	li {
+		display: block;
+		width: 20rem;
+		//margin: 5rem 4rem;
+		margin: 4rem 1rem;
+	}
+
+	figure {
+		height: 100%;
+		line-height: 1.33;
+		letter-spacing: initial;
+
+		> div {
+			display: flex;
+			height: 10rem;
+			margin-bottom: 3rem;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		img {
+			margin: auto;
+		}
+	}
+
+	figcaption {
+		height: 4rem;
+	}
+}
+
 @media screen and (max-width: $media-mobile) {
 	.section {
 		margin-bottom: 6.4rem;
