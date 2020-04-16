@@ -17,15 +17,13 @@ Styles for the welcome page
 }
 
 .welcome__quotes {
+	max-width: 72rem;
 	text-align: center;
 	padding-top: 5.8rem;
 	padding-left: 2.2rem;
 	padding-right: 2.2rem;
+	//noinspection CssUnknownTarget
 	background: url("../img/caroussel/quote-left.svg") no-repeat top left;
-
-	.caroussel__item {
-		//display: flex;
-	}
 
 	blockquote {
 		height: 100%;
