@@ -18,8 +18,20 @@ Styles for the welcome page
 
 .welcome__quotes {
 	text-align: center;
+	padding-top: 5.8rem;
+	padding-left: 2.2rem;
+	padding-right: 2.2rem;
+	background: url("../img/caroussel/quote-left.svg") no-repeat top left;
+
+	.caroussel__item {
+		//display: flex;
+	}
 
 	blockquote {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		font-size: 2.8rem;
 		font-weight: $fontWeigth-Bold;
 		line-height: 1.429;
@@ -33,7 +45,7 @@ Styles for the welcome page
 		font-size: .5em;
 		font-weight: $fontWeigth-Book;
 		font-style: normal;
-		line-height: 1.714;
+		line-height: 1.5;
 		color: $color-text-light;
 	}
 

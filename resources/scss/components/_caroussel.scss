@@ -6,9 +6,6 @@ Caroussel
 	position: relative;
 	max-width: 72rem;
 	margin: auto;
-	padding-top: 5.8rem;
-	padding-left: 2.2rem;
-	background: url("../img/caroussel/quote-left.svg") no-repeat top left;
 	background-size: 14.9rem 11.8rem;
 }
 
@@ -25,6 +22,7 @@ Caroussel
 }
 
 .caroussel__item {
+	display: block;
 	padding: 0 2rem;
 	min-width: 100%;
 }
@@ -32,7 +30,8 @@ Caroussel
 .caroussel__controls {
 	position: absolute;
 	bottom: 0;
-	width: 100%;
+	left: 0;
+	right: 0;
 	display: flex;
 	justify-content: space-between;
 }
