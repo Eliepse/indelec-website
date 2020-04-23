@@ -10,23 +10,33 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 
 $app->get('/', function (Request $request, Response $response, $args) {
-	$response->getBody()->write(view("welcome", ["name" => env("META_TITLE")]));
+	$response->getBody()->write(view("welcome", [
+		"name" => env("META_TITLE"),
+		"page" => "welcome",
+	]));
 	return $response;
 });
 
 $app->get('/about', function (Request $request, Response $response, $args) {
-	$response->getBody()->write(view("about", ["name" => env("META_TITLE")]));
+	$response->getBody()->write(view("about", [
+		"name" => env("META_TITLE"),
+		"page" => "about",
+	]));
 	return $response;
 });
 
 $app->get('/services', function (Request $request, Response $response, $args) {
-	$response->getBody()->write(view("services", ["name" => env("META_TITLE")]));
+	$response->getBody()->write(view("services", [
+		"name" => env("META_TITLE"),
+		"page" => "services",
+	]));
 	return $response;
 });
 
 $app->get('/clients', function (Request $request, Response $response, $args) {
 	$response->getBody()->write(view("clients", [
 		"name" => env("META_TITLE"),
+		"page" => "clients",
 		"clients" => [
 			[
 				"logo" => "matmut.png",
