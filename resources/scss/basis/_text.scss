@@ -11,11 +11,29 @@ strong {
 	font-weight: $fontWeigth-Bold;
 }
 
+.title-primary {
+	margin-bottom: 1.5em;
+	font-size: 4.8rem;
+	font-weight: $fontWeigth-Light;
+	line-height: 1.27;
+	color: $indelec-pink;
+}
+
+.title-secondary {
+	margin-bottom: 1em;
+	font-weight: $fontWeigth-Bold;
+	color: $indelec-pink;
+}
+
 .text--blue {
 	color: $color-blue;
 }
 
 @media (max-width: $media-small) {
+	.title-primary {
+		font-size: 2.4rem;
+	}
+
 	p {
 		margin-bottom: 1em;
 	}

@@ -28,7 +28,7 @@
 
 .section__figure--full {
 	margin-top: 0;
-	margin-bottom: 10rem;
+	margin-bottom: 8rem;
 }
 
 .section__content {
@@ -56,10 +56,6 @@
 
 .section__title {
 	margin-bottom: .667em;
-	font-size: 4.8rem;
-	font-weight: $fontWeigth-Light;
-	line-height: 1.27;
-	color: $indelec-pink;
 }
 
 .section__bkg-symbol {
@@ -107,12 +103,12 @@
 		}
 	}
 
-	.section__title {
-		font-size: 2.4rem;
-	}
-
 	.section__bkg-symbol {
 		transform: translate(-45%, 0%);
+	}
+
+	.section__title {
+		font-size: 2.4rem;
 	}
 }
 
