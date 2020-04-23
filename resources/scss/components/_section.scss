@@ -87,6 +87,7 @@
 	.section {
 		margin-top: $section-mobileMargin;
 		margin-bottom: $section-mobileMargin;
+		overflow: visible;
 	}
 
 	.section--brokenWhite,
