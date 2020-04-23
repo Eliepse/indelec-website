@@ -11,12 +11,10 @@ class Caroussel {
 
 	moveTo(index) {
 		this.caret = Math.min(this.length - 1, Math.max(0, index));
-		console.log(`Caroussel: moveTo(${index}): ${this.caret}`);
 		this.$list.style.left = -(this.$list.offsetWidth * this.caret) + "px";
 	}
 
 	moveNext() {
-		console.log(`Caroussel: moveNext()`);
 		if (this.caret >= this.length - 1) {
 			this.moveTo(0);
 			return;
@@ -25,7 +23,6 @@ class Caroussel {
 	}
 
 	movePrevious() {
-		console.log(`Caroussel: movePrevious()`);
 		if (this.caret <= 0) {
 			this.moveTo(this.length - 1);
 			return;
