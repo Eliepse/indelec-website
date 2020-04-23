@@ -63,7 +63,7 @@ This file define the style of the main navigation bar
 	}
 }
 
-@media screen and (max-width: $media-medium) {
+@media (max-width: $media-medium) {
 	.navigation__item a {
 		padding: 4rem 1em;
 	}

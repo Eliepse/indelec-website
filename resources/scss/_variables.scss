@@ -21,25 +21,25 @@ $media-medium: 1152px;
 $media-small: 768px;
 $media-mobile: 568px;
 
-@media screen and (max-width: $media-medium) {
+@media (max-width: $media-medium) {
 	html, body {
 		font-size: 1.8rem;
 	}
 }
 
-@media screen and (max-width: $media-small + 100px) {
+@media (max-width: $media-small + 100px) {
 	html, body {
 		font-size: 1.6rem;
 	}
 }
 
-@media screen and (max-width: $media-small) {
+@media (max-width: $media-small) {
 	html, body {
 		font-size: 1.8rem;
 	}
 }
 
-@media screen and (max-width: $media-mobile) {
+@media (max-width: $media-mobile) {
 	html, body {
 		font-size: 1.6rem;
 	}
