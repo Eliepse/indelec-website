@@ -16,6 +16,10 @@ html {
 main {
 	padding-top: 15rem;
 	transition: padding-top $transition-time-fast;
+
+	& > .section:first-child {
+		margin-top: 6.4rem;
+	}
 }
 
 .scrolled main {
@@ -36,5 +40,9 @@ main {
 
 	main {
 		padding-top: 17.5rem;
+
+		& > .section:first-child {
+			margin-top: 0;
+		}
 	}
 }
