@@ -20,10 +20,14 @@ p {
 	line-height: 1.58;
 	color: $color-text;
 	margin-bottom: 1.83em;
-}
 
-p + p {
-	margin-top: 1.83em;
+	& + p {
+		margin-top: 1.83em;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 strong {
