@@ -6,6 +6,7 @@
 }
 
 .section--brokenWhite,
+.section--blue,
 .section--pink {
 	padding-top: $section-padding;
 	padding-bottom: $section-padding;
@@ -15,9 +16,24 @@
 	background-color: $color-white-broken;
 }
 
+.section--pink,
+.section--blue {
+	color: $color-white;
+
+	h1,
+	h2,
+	h3,
+	p {
+		color: white;
+	}
+}
+
 .section--pink {
 	background-color: $indelec-pink;
-	color: $color-white;
+}
+
+.section--blue {
+	background-color: $color-blue;
 }
 
 .section__figure {
@@ -74,6 +90,7 @@
 	}
 
 	.section--brokenWhite,
+	.section--blue,
 	.section--pink {
 		padding-top: $section-mobilePadding;
 		padding-bottom: $section-mobilePadding;
