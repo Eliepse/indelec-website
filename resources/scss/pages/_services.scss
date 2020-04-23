@@ -1,0 +1,30 @@
+/*
+Services
+*/
+
+.page--services {
+	.services__list {
+		margin: 0 2em;
+
+		h2 {
+			margin-bottom: .833em;
+		}
+
+		li {
+			margin-bottom: 2em;
+		}
+	}
+
+	.services__examples {
+		margin-top: 6.4rem;
+		line-height: 2;
+	}
+}
+
+@media (max-width: $media-small) {
+	.page--services {
+		.services__list {
+			margin: 0;
+		}
+	}
+}

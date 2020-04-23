@@ -18,3 +18,8 @@ $app->get('/about', function (Request $request, Response $response, $args) {
 	$response->getBody()->write(view("about", ["name" => env("META_TITLE")]));
 	return $response;
 });
+
+$app->get('/services', function (Request $request, Response $response, $args) {
+	$response->getBody()->write(view("services", ["name" => env("META_TITLE")]));
+	return $response;
+});

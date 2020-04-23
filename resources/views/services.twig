@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ name }} - Nos services</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="{{ webpack("css/styles.css") }}" type="text/css">
+</head>
+<body class="page--services">
+{% include "components/navigation.twig" %}
+<main>
+
+	{# Notre entreprise #}
+	<section class="section container">
+		<figure class="section__figure section__figure--full" style="background-image: url('/img/cathedrale.jpg')">
+			<img src="/img/cathedrale.jpg" alt="Intérieur d'une cathédrale en chantier de rénovation">
+		</figure>
+		<h1 class="title-primary">Nos services</h1>
+		<div class="section__content section__content--col">
+			<div>
+				<p>
+					Spécialistes de l’industrie du bâtiment et du courant fort, nous conçevons, réalisons et entrenons
+					vos installations électriques lors d’une rénovation ou d’un projet de construction.
+				</p>
+				<ul class="services__examples text--blue hide--mobile">
+					<li>Automatisation</li>
+					<li>Mise en lumière</li>
+					<li>Audio, vidéo et réseaux</li>
+					<li>Chauffage électrique</li>
+					<li>Bornes pour véhicules électriques</li>
+				</ul>
+			</div>
+			<div>
+				<ul class="services__list">
+					<li>
+						<h2 class="title-secondary">Électrique</h2>
+						<p>
+							Nous prenons en charge l’ensemble des installations
+							électriques en courant faible et fort de nos clients.
+						</p>
+					</li>
+					<li>
+						<h2 class="title-secondary">Domotique</h2>
+						<p>Nous restons à jour sur les nouvelles technologies pour répondre aux défis contemporains.</p>
+					</li>
+					<li>
+						<h2 class="title-secondary">Sur mesure</h2>
+						<p>Une adaptation aux typologies de chantier qui permet une installation sur le long terme.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+</main>
+{% include "components/footer.twig" %}
+<script src="{{ webpack("js/index.js") }}"></script>
+</body>
+</html>
