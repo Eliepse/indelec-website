@@ -11,8 +11,11 @@ html, body {
 	color: $text-dark;
 }
 
-h2 {
+h1,
+h2,
+h3 {
 	line-height: 1.25;
+	letter-spacing: .017em;
 }
 
 p {
