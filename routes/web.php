@@ -10,6 +10,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 
 $app->get('/', function (Request $request, Response $response, $args) {
-	$response->getBody()->write(view("welcome", ["name" => "INDéLEC"]));
+	$response->getBody()->write(view("welcome", ["name" => env("META_TITLE")]));
 	return $response;
 });
