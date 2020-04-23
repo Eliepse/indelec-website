@@ -14,17 +14,17 @@ html {
 }
 
 main {
-	margin-top: 15rem;
-	transition: margin-top $transition-time-fast;
+	padding-top: 15rem;
+	transition: padding-top $transition-time-fast;
 }
 
 .scrolled main {
-	margin-top: 8.5rem;
+	padding-top: 8.5rem;
 }
 
 @media screen and (max-width: $media-medium) {
 	main {
-		margin-top: 10rem;
+		padding-top: 10rem;
 	}
 }
 
@@ -35,6 +35,6 @@ main {
 	}
 
 	main {
-		margin-top: 13.5rem;
+		padding-top: 13.5rem;
 	}
 }
