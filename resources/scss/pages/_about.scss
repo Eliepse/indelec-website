@@ -1,0 +1,19 @@
+/*
+About
+*/
+
+//.page--about {}
+
+.about__sponsoring {
+	padding-bottom: 0;
+}
+
+.about__sponsoring .section__content {
+	margin-bottom: $section-padding;
+}
+
+@media (max-width: $media-small) {
+	.about__sponsoring .section__content {
+		margin-bottom: $section-mobilePadding;
+	}
+}

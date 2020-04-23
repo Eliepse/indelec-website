@@ -1,0 +1,51 @@
+/*
+Sponsoring
+*/
+
+.sponsoring {
+	position: relative;
+	width: 100%;
+}
+
+.sponsoring img {
+	width: 100%;
+	height: auto;
+}
+
+.sponsoring__description {
+	position: absolute;
+	padding: 2em 2.75em;
+	max-width: 26em;
+	right: 4.25em;
+	bottom: 4.25em;
+	font-size: .825em;
+	background-color: $color-white;
+
+	h3 {
+		margin-bottom: 1em;
+		font-size: 1.33em;
+		font-weight: $fontWeigth-Bold;
+		color: $indelec-pink;
+	}
+
+	p {
+		color: $text-dark;
+	}
+}
+
+@media (max-width: $media-small) {
+	.sponsoring__description {
+		font-size: 1em;
+		right: 1.5em;
+		bottom: 1.5em;
+	}
+}
+
+@media (max-width: $media-mobile) {
+	.sponsoring__description {
+		position: initial;
+		max-width: none;
+		background-color: $color-white-broken;
+
+	}
+}

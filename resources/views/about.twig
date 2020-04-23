@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ name }} - Notre entreprise</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="{{ webpack("css/styles.css") }}" type="text/css">
+</head>
+<body class="page--about">
+{% include "components/navigation.twig" %}
+<main>
+
+	{# Notre entreprise #}
+	<section class="section container">
+		<figure class="section__figure section__figure--full" style="background-image: url('/img/installation-spot.jpg')">
+			<img src="/img/installation-spot.jpg" alt="Gros plan sur un ouvrier en train d'installer un spot extérieur">
+		</figure>
+		<h1 class="title-primary">Notre entreprise</h1>
+		<div class="section__content section__content--col">
+			<div>
+				<h3 class="title-secondary">Une grande histoire</h3>
+				<p>
+					INDéLEC, entreprise familiale créée en 1956 par Christophe RIOU, est implantée en région parisienne.
+					Spécialiste de l'industrie et du bâtiment, INDéLEC conçoit, réalise et entretient vos installations
+					électriques et domotiques sur Paris et l'ensemble du territoire.
+				</p>
+				<p>
+					Forte d'une expérience de plusieurs décennies, INDéLEC a développé une expertise qu'elle met au service
+					d'une clientèle variée relevant à la fois des secteurs publics et privés, notamment des cabinets
+					d'architectures, des bailleurs, des entreprises et des associations. L'un de ses atouts est de savoir
+					s'adapter à chaque typologie de chantier avec une méthode et un savoir-faire qui se transmettent
+					de génération en génération.
+				</p>
+				<p>
+					A ce jour, l'entreprise est dirigée par Gilles LOURS et Ghislaine LOURS-RIOU.
+					La troisième génération est d'ores et déjà en formation au sein de l'entreprise.
+				</p>
+			</div>
+			<div>
+				<h3 class="title-secondary">Une expertise qui se transmet</h3>
+				<p>
+					La formation de nos collaborateurs et la transmission des savoirs sont des valeurs essentielles pour
+					notre société à taille humaine. Depuis notre création, nous avons toujours misé sur l'apprentissage
+					pour garantir un personnel de qualité et capable d'assurer le transfert des compétences aux plus jeunes.
+					Avoir une entière confiance en nos équipes nous permet de vous assurer une qualité de service
+					et d'exécution optimale.
+				</p>
+				<h3 class="title-secondary">Une entreprise contemporaine</h3>
+				<p>
+					Nous sommes soucieux des défis contemporains auxquels chacun est confronté. Ainsi pour répondre
+					aux enjeux environnementaux, nous nous efforçons de réduire les coûts énergétiques de ces installations
+					en améliorant le rendement énergétique des bâtiments par le biais de produits spécifiques, et de la
+					domotique. Des objectifs qui nous poussent sans cesse à innover et à vous proposer des solutions
+					toujours plus personnalisées.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	{# De nouveaux horizons #}
+	<section class="section section--blue about__sponsoring">
+		<div class="section__content section__content--col container">
+			<div>
+				<h2 class="section__title title-primary">De nouveaux horizons</h2>
+			</div>
+			<div>
+				<p>
+					Depuis 2019, INDéLEC a entrepris d’agir au delà de son domaine d’expertise.
+					Nous nous investissons ainsi dans des projets variés en tant que sponsors.
+				</p>
+			</div>
+		</div>
+		<figure class="sponsoring">
+			<img src="/img/4l-trophy.jpg" alt="L'équipe INDéLEC pose devant sa 4L à pendant sa participation au 4L Trophy">
+			<figcaption class="sponsoring__description">
+				<h3>4L Trophy</h3>
+				<p>En 2020, INDéLEC a participé au 4L Trophy, un événement humanitaire en Afrique du Nord.</p>
+			</figcaption>
+		</figure>
+	</section>
+
+</main>
+{% include "components/footer.twig" %}
+<script src="{{ webpack("js/index.js") }}"></script>
+</body>
+</html>
