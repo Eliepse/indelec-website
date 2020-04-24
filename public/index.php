@@ -11,6 +11,7 @@ $dotenv->load();
 $dotenv->required('APP_ENV')->notEmpty()->allowedValues(['local', 'production']);
 $dotenv->required('META_TITLE')->notEmpty();
 $dotenv->required('META_DESCRIPTION')->notEmpty();
+$dotenv->required('CONTACT_TARGET_MAIL')->notEmpty();
 
 $app = AppFactory::create();
 
