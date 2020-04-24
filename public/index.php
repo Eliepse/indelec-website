@@ -1,6 +1,7 @@
 <?php
 
 use App\App;
+use App\Middlewares\JsonBodyParserMiddleware;
 use Slim\Factory\AppFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -17,6 +18,8 @@ App::setApp($app);
 
 
 $app->addRoutingMiddleware();
+$app->addMiddleware(new JsonBodyParserMiddleware());
+
 $app->addErrorMiddleware(app()->isLocal(), true, true);
 
 include_once '../routes/web.php';
