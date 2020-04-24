@@ -1,6 +1,7 @@
 <?php
 
 use App\App;
+use App\Middlewares\EscapeRequestContentMiddleware;
 use App\Middlewares\JsonBodyParserMiddleware;
 use Slim\Factory\AppFactory;
 
@@ -20,6 +21,7 @@ App::setApp($app);
 
 $app->addRoutingMiddleware();
 $app->addMiddleware(new JsonBodyParserMiddleware());
+$app->addMiddleware(new EscapeRequestContentMiddleware());
 
 $app->addErrorMiddleware(app()->isLocal(), true, true);
 
