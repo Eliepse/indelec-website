@@ -42,7 +42,7 @@ $app->get('/clients', function (Request $request, Response $response, $args) {
 				"logo" => "matmut.png",
 				"brand" => "Matmut",
 				"year" => "depuis 1988",
-				"description" => "Création et entretien électrique et d'agences en Ile-de-France.",
+				"description" => "Création et entretien électrique et d’agences en Ile-de-France.",
 			],
 			[
 				"logo" => "gecina.png",
@@ -53,9 +53,9 @@ $app->get('/clients', function (Request $request, Response $response, $args) {
 			],
 			[
 				"logo" => "apprentis-auteuil.png",
-				"brand" => "Fondation Apprentis d'Auteuil",
+				"brand" => "Fondation Apprentis d’Auteuil",
 				"year" => "depuis 1998",
-				"description" => "Divers travaux d'aménagement ainsi que l'entretien "
+				"description" => "Divers travaux d’aménagement ainsi que l’entretien "
 					. "électrique des installations réalisées.",
 			],
 			[
@@ -83,8 +83,8 @@ $app->get('/clients', function (Request $request, Response $response, $args) {
 				"logo" => "sauvegarde-yvelines.svg",
 				"brand" => "La Sauvegarde des Yvelines",
 				"year" => "2017, 2019",
-				"description" => "Rénovation complète d’une crèche. Aménagement d'ateliers techniques et pédagogiques "
-					. "à destination des jeunes du territoire au sein de l'Institut Médico Educatif.",
+				"description" => "Rénovation complète d’une crèche. Aménagement d’ateliers techniques et pédagogiques "
+					. "à destination des jeunes du territoire au sein de l’Institut Médico Educatif.",
 			],
 		],
 	]));
