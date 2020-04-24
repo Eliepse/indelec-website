@@ -23,9 +23,7 @@
 				Nous entretenons une relation de confiance avec nos clients.
 			</p>
 			<ul class="clients_list">
-				{% for client in clients %}
-					{{ include('components/clientCard.twig', client) }}
-				{% endfor %}
+				{% include "components/clients_list.twig" %}
 			</ul>
 		</div>
 	</section>
