@@ -1,0 +1,56 @@
+<form class="form" method="POST" action="/contact">
+	<!-- honeypot -->
+	<div class="form__input-group">
+		<label class="form__label" for="contact-name">Nom et Prénom</label>
+		<input type="text"
+		       name="name"
+		       class="form__control"
+		       id="contact-name"
+		       placeholder="Vos nom et prénom..."
+		       required
+		       maxlength="50"
+		>
+		{#						<div class="input__helper">Ceci est un message d’erreur</div>#}
+	</div>
+	<div class="form__input-group">
+		<label class="form__label" for="contact-email">Email</label>
+		<input type="email"
+		       name="email"
+		       class="form__control"
+		       id="contact-email"
+		       placeholder="votre-email@exemple.fr"
+		       required
+		       maxlength="200"
+		>
+		{#						<div class="input__helper">Ceci est un message d’erreur</div>#}
+	</div>
+	<div class="form__input-group">
+		<label class="form__label" for="contact-phone">Téléphone</label>
+		<input type="phone"
+		       name="phone"
+		       class="form__control"
+		       id="contact-phone"
+		       pattern="[0-9 +()]+"
+		       placeholder="01 23 45 67 89"
+		       required
+		       maxlength="200"
+		>
+		{#						<div class="input__helper">Ceci est un message d’erreur</div>#}
+	</div>
+	<div class="form__input-group">
+		<label class="form__label" for="contact-message">Message</label>
+		<textarea name="message"
+		          class="form__control"
+		          id="contact-message"
+		          placeholder="Votre message ici..."
+		          required
+		          maxlength="500"
+		></textarea>
+		{#						<div class="input__helper">Ceci est un message d’erreur</div>#}
+	</div>
+	<button class="form__submit">Envoyer mon message</button>
+	<p class="form__legal">
+		Les informations transmises sont utilisées uniquement dans le cadre de la prise de contact
+		et ne feront pas l’objet de prospection commercial, ni de partage à des tiers.
+	</p>
+</form>

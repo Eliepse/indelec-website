@@ -1,5 +1,9 @@
 <?php
 
+use App\Middlewares\InjectHoneypotMiddleware;
+use Slim\App;
+use App\Middlewares\HoneypotMiddleware;
+use App\Middlewares\ValidateContactFormMiddleware;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
@@ -7,7 +11,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
  * @var App $app
  */
 
-use Slim\App;
 
 $app->get('/', function (Request $request, Response $response, $args) {
 	$response->getBody()->write(view("welcome", [
@@ -15,7 +18,8 @@ $app->get('/', function (Request $request, Response $response, $args) {
 		"page" => "welcome",
 	]));
 	return $response;
-});
+})
+	->add(new InjectHoneypotMiddleware());
 
 $app->get('/about', function (Request $request, Response $response, $args) {
 	$response->getBody()->write(view("about", [
