@@ -136,6 +136,12 @@ Styles for the welcome page
 	margin-bottom: 0;
 }
 
+.welcome__history-slider {
+	.caroussel__item {
+		max-width: 52.5rem;
+		height: 52.5rem;
+	}
+}
 
 @media screen and (max-width: $media-small) {
 	.welcome__qualifelec {
@@ -162,6 +168,13 @@ Styles for the welcome page
 
 	.welcome__contact-info > * {
 		margin-bottom: 5rem;
+	}
+
+	.welcome__history-slider {
+		margin-bottom: 2.67em;
+		.caroussel__item {
+			height: 36.5rem;
+		}
 	}
 }
 
