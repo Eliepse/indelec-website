@@ -9,8 +9,8 @@ $fontWeigth-Bold: 700;
 @font-face {
 	font-family: Jost;
 	src: local('Jost* 300 Light'),
-	url('../fonts/Jost-300-Light.subset.woff2') format('woff2'),
-	url('../fonts/Jost-300-Light.subset.woff') format('woff');
+		url('../fonts/Jost-300-Light.subset.woff2') format('woff2'),
+		url('../fonts/Jost-300-Light.subset.woff') format('woff');
 	font-weight: $fontWeigth-Light;
 	font-style: normal;
 }
@@ -18,8 +18,8 @@ $fontWeigth-Bold: 700;
 @font-face {
 	font-family: Jost;
 	src: local('Jost* 400 Book'),
-	url('../fonts/Jost-400-Book.subset.woff2') format('woff2'),
-	url('../fonts/Jost-400-Book.subset.woff') format('woff');
+		url('../fonts/Jost-400-Book.subset.woff2') format('woff2'),
+		url('../fonts/Jost-400-Book.subset.woff') format('woff');
 	font-weight: $fontWeigth-Book;
 	font-style: normal;
 }
@@ -27,8 +27,8 @@ $fontWeigth-Bold: 700;
 @font-face {
 	font-family: Jost;
 	src: local('Jost* 700 Bold'),
-	url('../fonts/Jost-700-Bold.subset.woff2') format('woff2'),
-	url('../fonts/Jost-700-Bold.subset.woff') format('woff');
+		url('../fonts/Jost-700-Bold.subset.woff2') format('woff2'),
+		url('../fonts/Jost-700-Bold.subset.woff') format('woff');
 	font-weight: $fontWeigth-Bold;
 	font-style: normal;
 }
