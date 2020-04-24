@@ -8,6 +8,10 @@ Form
 	font-size: .75em;
 	text-align: left;
 	color: $color-text-light;
+
+	.form__legal {
+		color: $color-text-light;
+	}
 }
 
 .form__input-group {
