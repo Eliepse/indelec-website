@@ -1,0 +1,8 @@
+AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz
+ÀàÂâÆæÇçÉéÈèÊêËëÎîÏïÔôŒœÙùÛûÜüŸÿ
+0123456789
+ ,.:;?!…“”=+*/[]{}()"'«’»— – - _ € & @ #
+
+Commands:
+$ pyftsubset ./fontfile --text-file="./charset.txt" --flavor=woff
+$ pyftsubset ./fontfile --text-file="./charset.txt" --flavor=woff2
