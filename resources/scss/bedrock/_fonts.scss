@@ -13,6 +13,7 @@ $fontWeigth-Bold: 700;
 		url('../fonts/Jost-300-Light.subset.woff') format('woff');
 	font-weight: $fontWeigth-Light;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -22,6 +23,7 @@ $fontWeigth-Bold: 700;
 		url('../fonts/Jost-400-Book.subset.woff') format('woff');
 	font-weight: $fontWeigth-Book;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -31,4 +33,5 @@ $fontWeigth-Bold: 700;
 		url('../fonts/Jost-700-Bold.subset.woff') format('woff');
 	font-weight: $fontWeigth-Bold;
 	font-style: normal;
+	font-display: swap;
 }
