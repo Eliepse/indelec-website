@@ -6,6 +6,7 @@ use App\App;
 use App\Middlewares\EscapeRequestContentMiddleware;
 use App\Middlewares\JsonBodyParserMiddleware;
 use DI\Bridge\Slim\Bridge;
+use DI\ContainerBuilder;
 use Middlewares\PhpSession;
 use Slim\Flash\Messages;
 
@@ -33,12 +34,21 @@ $sessionMiddleware = (new PhpSession())
 	])
 	->regenerateId(3_600 * 24);
 
-$app = Bridge::create();
+$builder = new ContainerBuilder();
+$builder->useAutowiring(false);
+$builder->useAnnotations(false);
+if(env("APP_ENV") === "production") {
+	$builder->enableCompilation(__DIR__ . '/../storage/cache/phpdi');
+	$builder->writeProxiesToFile(true, __DIR__ . '/../storage/cache/proxies');
+}
+$container = $builder->build();
+
+$app = Bridge::create($container);
 
 App::setApp($app);
 
 // Inject services
-$app->getContainer()->set(Messages::class, fn() => new Messages());
+$container->set(Messages::class, fn() => new Messages());
 
 // Add global middlewares
 $app->addMiddleware($sessionMiddleware);
