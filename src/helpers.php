@@ -64,3 +64,27 @@ if (!function_exists('flash')) {
 		return App::getInstance()->getApp()->getContainer()->get(Messages::class);
 	}
 }
+
+if (!function_exists('errors')) {
+	function errors(string $key): ?array
+	{
+		$all_errors = flash()->getMessage("errors");
+
+		if (empty($all_errors))
+			return null;
+
+		$all_errors = $all_errors[0];
+
+
+		if (!isset($all_errors[ $key ]))
+			return null;
+
+
+		$key_errors = $all_errors[ $key ];
+
+		if (empty($key_errors))
+			return null;
+
+		return is_array($key_errors) ? $key_errors : [$key_errors];
+	}
+}
