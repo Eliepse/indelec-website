@@ -1,8 +1,42 @@
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+<meta name="theme-color" content="#F7F7F7">
+<!-- Short description of the document (limit to 150 characters) -->
+<!-- This content *may* be used as a part of search engine results. -->
+<meta name="description" content="{{ env('META_DESCRIPTION') }}">
+
+<link rel="author" href="/humans.txt">
+
 {# Icons #}
 <link rel="icon" type="image/gif" sizes="398x398" href="/img/logos/indelec-icon.gif">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/logos/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/img/logos/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/img/logos/favicon-16x16.png">
+
+{# OpenGraph #}
+{#<meta property="fb:app_id" content="123456789">#}
+<meta property="og:url" content="{{ env('APP_URL') }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ env('META_TITLE') }}{{ pageTitle ?? "" }}">
+{#<meta property="og:image" content="https://example.com/image.jpg">#}
+{#<meta property="og:image:alt" content="A description of what is in the image (not a caption)">#}
+<meta property="og:description" content="{{ env('META_DESCRIPTION') }}">
+<meta property="og:site_name" content="{{ env('META_TITLE') }}">
+<meta property="og:locale" content="fr_FR">
+
+{# Twitter card #}
+<meta name="twitter:card" content="summary">
+{#<meta name="twitter:site" content="@site_account">#}
+{#<meta name="twitter:creator" content="@individual_account">#}
+<meta name="twitter:url" content="{{ env('APP_URL') }}">
+<meta name="twitter:title" content="{{ env('META_TITLE') }}{{ pageTitle ?? "" }}">
+<meta name="twitter:description" content="{{ env('META_DESCRIPTION') }}">
+{#<meta name="twitter:image" content="https://example.com/image.jpg">#}
+{#<meta name="twitter:image:alt" content="A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters.">#}
+{# disallow Twitter from using your site's info for personalization purposes: #}
+<meta name="twitter:dnt" content="on">
+
+{# Prevent Pinterest pins #}
+<meta name="pinterest" content="nopin" description="Sorry, our website does not have content suitable for Pinterest.">
 
 {# Styles #}
 <meta http-equiv="x-ua-compatible" content="ie=edge">
