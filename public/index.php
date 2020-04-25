@@ -35,7 +35,7 @@ $sessionMiddleware = (new PhpSession())
 	->regenerateId(3_600 * 24);
 
 $builder = new ContainerBuilder();
-$builder->useAutowiring(false);
+$builder->useAutowiring(true);
 $builder->useAnnotations(false);
 if(env("APP_ENV") === "production") {
 	$builder->enableCompilation(__DIR__ . '/../storage/cache/phpdi');
