@@ -5,7 +5,8 @@
         "slim/slim" : "4",
         "slim/psr7" : "^1.0",
         "vlucas/phpdotenv" : "^4.1",
-        "twig/twig" : "3.0"
+        "twig/twig" : "3.0",
+        "symfony/mailer": "^5.0"
     },
     "autoload" : {
         "files" : [

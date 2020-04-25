@@ -12,7 +12,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
  */
 
 
-$app->get('/', function (Request $request, Response $response, $args) {
+$app->get('/', function (Request $request, Response $response) {
 	$response->getBody()->write(view("welcome", [
 		"name" => env("META_TITLE"),
 		"page" => "welcome",
@@ -21,7 +21,7 @@ $app->get('/', function (Request $request, Response $response, $args) {
 })
 	->add(new InjectHoneypotMiddleware());
 
-$app->get('/about', function (Request $request, Response $response, $args) {
+$app->get('/about', function (Request $request, Response $response) {
 	$response->getBody()->write(view("about", [
 		"name" => env("META_TITLE"),
 		"page" => "about",
@@ -29,7 +29,7 @@ $app->get('/about', function (Request $request, Response $response, $args) {
 	return $response;
 });
 
-$app->get('/services', function (Request $request, Response $response, $args) {
+$app->get('/services', function (Request $request, Response $response) {
 	$response->getBody()->write(view("services", [
 		"name" => env("META_TITLE"),
 		"page" => "services",
@@ -37,7 +37,7 @@ $app->get('/services', function (Request $request, Response $response, $args) {
 	return $response;
 });
 
-$app->get('/clients', function (Request $request, Response $response, $args) {
+$app->get('/clients', function (Request $request, Response $response) {
 	$response->getBody()->write(view("clients", [
 		"name" => env("META_TITLE"),
 		"page" => "clients",
