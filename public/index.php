@@ -6,6 +6,7 @@ use App\Middlewares\EscapeRequestContentMiddleware;
 use App\Middlewares\JsonBodyParserMiddleware;
 use DI\Bridge\Slim\Bridge;
 use Middlewares\PhpSession;
+use Slim\Flash\Messages;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -35,6 +36,8 @@ $app = Bridge::create();
 
 App::setApp($app);
 
+// Inject services
+$app->getContainer()->set(Messages::class, fn() => new Messages());
 
 // Add global middlewares
 $app->addMiddleware($sessionMiddleware);

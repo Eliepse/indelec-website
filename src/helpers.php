@@ -2,6 +2,7 @@
 /** @noinspection PhpUnhandledExceptionInspection */
 
 use App\App;
+use Slim\Flash\Messages;
 
 if (!function_exists("env")) {
 	/**
@@ -54,5 +55,12 @@ if (!function_exists("view")) {
 	{
 		$name .= pathinfo($name, PATHINFO_EXTENSION) ?: ".twig";
 		return app()->getTwigEnvironment()->render($name, $values);
+	}
+}
+
+if (!function_exists('flash')) {
+	function flash(): Messages
+	{
+		return App::getInstance()->getApp()->getContainer()->get(Messages::class);
 	}
 }
