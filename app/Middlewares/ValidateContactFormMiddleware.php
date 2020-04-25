@@ -37,7 +37,7 @@ class ValidateContactFormMiddleware
 		if (!empty($this->errors)) {
 			flash()->addMessage("errors", $this->errors);
 			return new RedirectResponse(
-				$request->getHeaders()["referer"][0] . "#contact",
+				$request->getHeader("referer")[0] . "#contact",
 				new Headers(["method" => "get"])
 			);
 		}
