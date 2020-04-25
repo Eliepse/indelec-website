@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+mb_internal_encoding("UTF-8");
 
 use App\App;
 use App\Middlewares\EscapeRequestContentMiddleware;
