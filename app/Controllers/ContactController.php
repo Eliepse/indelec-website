@@ -12,25 +12,18 @@ use Symfony\Component\Mailer\Transport\SendmailTransport;
 
 class ContactController
 {
-	private Request $request;
-
-
-	public function __construct(Request $request)
-	{
-		$this->request = $request;
-	}
-
-
 	/**
+	 * @param Request $request
+	 *
 	 * @return Response
 	 * @throws TransportExceptionInterface
 	 * @noinspection PhpUnused
 	 */
-	public function sendMail(): Response
+	public function sendMail(Request $request): Response
 	{
 		$transport = new SendmailTransport(env("SENDMAIL_PATH") . " -bs");
 		$mailer = new Mailer($transport);
-		$mail = new ContactFromVisitorMail($this->request->getParsedBody());
+		$mail = new ContactFromVisitorMail($request->getParsedBody());
 		$mailer->send($mail);
 		return new RedirectResponse("/message-sent");
 	}
