@@ -18,6 +18,20 @@ Form
 	margin-bottom: 1.5em;
 }
 
+.form__input-group--invalid {
+	.form__control {
+		border: 1px solid $indelec-pink;
+	}
+
+	.input__helper {
+		margin: .5em 0;
+		font-size: .889em;
+		line-height: 1.25;
+		color: $indelec-pink;
+	}
+}
+
+
 .form__label {
 	display: block;
 	font-size: .889em;
@@ -28,6 +42,7 @@ input.form__control,
 textarea.form__control {
 	display: block;
 	width: 100%;
+	margin-bottom: 1em;
 	padding: .25em .5em;
 	border: 1px solid #D6D8DA;
 	background-color: $color-white;
