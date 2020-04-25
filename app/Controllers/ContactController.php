@@ -35,6 +35,6 @@ class ContactController
 	 */
 	public function showSuccess(): Response
 	{
-		return view("contact-thanks", ["page" => null]);
+		return view("contact-thanks", ["pageTitle" => " | Message envoyé", "page" => null]);
 	}
 }

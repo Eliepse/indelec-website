@@ -8,6 +8,6 @@ class AboutController
 {
 	public function __invoke(): Response
 	{
-		return view("about", ["page" => "about"]);
+		return view("about", ["pageTitle" => " | Notre entreprise", "page" => "about"]);
 	}
 }

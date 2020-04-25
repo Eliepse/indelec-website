@@ -8,6 +8,6 @@ class ServicesController
 {
 	public function __invoke(): Response
 	{
-		return view("services", ["page" => "services"]);
+		return view("services", ["pageTitle" => " | Nos services", "page" => "services"]);
 	}
 }
