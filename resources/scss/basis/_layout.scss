@@ -15,6 +15,7 @@ html {
 
 main {
 	padding-top: 15rem;
+	min-height: 70vh;
 	transition: padding-top $transition-time-fast;
 
 	& > .section:first-child {
