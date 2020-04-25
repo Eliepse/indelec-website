@@ -1,0 +1,24 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{{ subject }}</title>
+	<style></style>
+</head>
+<body>
+
+<p>
+	Bonjour,<br>
+	Vous avez reçu un nouveau message d'un visiteur du site web.
+</p>
+
+<p>
+	De <strong>{{ name }}</strong> (<a href="mailto:{{ email }}">{{ email }}</a>, {{ phone }}),<br>
+	le {{ created_at }}
+</p>
+
+<blockquote>
+	{{ message|nl2br }}
+</blockquote>
+
+</body>
+</html>
