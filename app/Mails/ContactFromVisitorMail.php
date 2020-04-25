@@ -27,7 +27,7 @@ class ContactFromVisitorMail extends Email
 			"subject" => $this->getSubject(),
 		]);
 
-		$this->text(view("mails/contactFromVisitor-txt", $this->data));
-		$this->html(view("mails/contactFromVisitor-html", $this->data));
+		$this->text((string)view("mails/contactFromVisitor-txt", $this->data)->getBody());
+		$this->html((string)view("mails/contactFromVisitor-html", $this->data)->getBody());
 	}
 }

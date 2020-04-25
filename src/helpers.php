@@ -2,7 +2,9 @@
 /** @noinspection PhpUnhandledExceptionInspection */
 
 use App\App;
+use Fig\Http\Message\StatusCodeInterface;
 use Slim\Flash\Messages;
+use Slim\Psr7\Response;
 
 if (!function_exists("env")) {
 	/**
@@ -51,10 +53,12 @@ if (!function_exists('webpack')) {
 }
 
 if (!function_exists("view")) {
-	function view(string $name, array $values = []): string
+	function view(string $name, array $values = []): Response
 	{
 		$name .= pathinfo($name, PATHINFO_EXTENSION) ?: ".twig";
-		return app()->getTwigEnvironment()->render($name, $values);
+		$response = new Response(StatusCodeInterface::STATUS_OK);
+		$response->getBody()->write(app()->getTwigEnvironment()->render($name, $values));
+		return $response;
 	}
 }
 
