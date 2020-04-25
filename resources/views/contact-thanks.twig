@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ name }} - Message envoyé</title>
+	<meta name="robots" content="noindex,nofollow">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="{{ webpack("css/styles.css") }}" type="text/css">
+</head>
+<body class="page--about">
+{% include "components/navigation.twig" %}
+<main>
+
+	<section class="section container text--center">
+		<h1 class="title-primary">Message envoyé</h1>
+		<p>
+			Merci de votre message, il a bien été envoyé à notre équipe.<br>
+			Nous reviendrons vers vous dès que possible.
+		</p>
+	</section>
+
+</main>
+{% include "components/footer.twig" %}
+<script src="{{ webpack("js/index.js") }}"></script>
+</body>
+</html>

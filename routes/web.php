@@ -2,6 +2,7 @@
 
 use App\Mails\ContactFromVisitorMail;
 use App\Middlewares\InjectHoneypotMiddleware;
+use App\RedirectResponse;
 use Slim\App;
 use App\Middlewares\HoneypotMiddleware;
 use App\Middlewares\ValidateContactFormMiddleware;
@@ -53,11 +54,15 @@ $app->post('/contact', function (Request $request, Response $response) {
 	$mailer = new Mailer($transport);
 	$mail = new ContactFromVisitorMail($request->getParsedBody());
 	$mailer->send($mail);
-	$message = "Merci de votre message, il a bien été envoyé à notre équipe.<br>"
-		. "Nous reviendrons vers vous dès que possible.";
-	$response = $response->withHeader("content-type", "application/json; charset=utf-8");
-	$response->getBody()->write(json_encode(["message" => $message]));
-	return $response;
+	return new RedirectResponse("/message-sent");
 })
 	->add(new HoneypotMiddleware())
 	->add(new ValidateContactFormMiddleware());
+
+$app->get("/message-sent", function (Request $request, Response $response) {
+	$response->getBody()->write(view("contact-thanks", [
+		"name" => env("META_TITLE"),
+		"page" => null
+	]));
+	return $response;
+});
