@@ -8,9 +8,6 @@ class AboutController
 {
 	public function __invoke(): Response
 	{
-		return view("about", [
-			"name" => env("META_TITLE"),
-			"page" => "about",
-		]);
+		return view("about", ["page" => "about"]);
 	}
 }

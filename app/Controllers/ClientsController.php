@@ -8,9 +8,6 @@ class ClientsController
 {
 	public function __invoke(): Response
 	{
-		return view("clients", [
-			"name" => env("META_TITLE"),
-			"page" => "clients",
-		]);
+		return view("clients", ["page" => "clients"]);
 	}
 }

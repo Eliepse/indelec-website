@@ -42,9 +42,6 @@ class ContactController
 	 */
 	public function showSuccess(): Response
 	{
-		return view("contact-thanks", [
-			"name" => env("META_TITLE"),
-			"page" => null,
-		]);
+		return view("contact-thanks", ["page" => null]);
 	}
 }
