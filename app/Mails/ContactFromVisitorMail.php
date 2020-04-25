@@ -7,7 +7,7 @@ use Symfony\Component\Mime\Email;
 
 class ContactFromVisitorMail extends Email
 {
-	private array $data = [];
+	private array $data;
 
 
 	public function __construct(array $data)
