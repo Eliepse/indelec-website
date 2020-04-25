@@ -1,6 +1,6 @@
 <form class="form" method="POST" action="/contact">
 	<!-- honeypot -->
-	<div class="form__input-group">
+	<div class="form__input-group {% if errors("name") %} form__input-group--invalid {% endif %}">
 		<label class="form__label" for="contact-name">Nom et Prénom</label>
 		<input type="text"
 		       name="name"
@@ -10,9 +10,11 @@
 		       required
 		       maxlength="50"
 		>
-		{#						<div class="input__helper">Ceci est un message d’erreur</div>#}
+		{% for message in errors("name") %}
+			<div class="input__helper">{{ message }}</div>
+		{% endfor %}
 	</div>
-	<div class="form__input-group">
+	<div class="form__input-group {% if errors("email") %} form__input-group--invalid {% endif %}">
 		<label class="form__label" for="contact-email">Email</label>
 		<input type="email"
 		       name="email"
@@ -22,9 +24,11 @@
 		       required
 		       maxlength="200"
 		>
-		{#						<div class="input__helper">Ceci est un message d’erreur</div>#}
+		{% for message in errors("email") %}
+			<div class="input__helper">{{ message }}</div>
+		{% endfor %}
 	</div>
-	<div class="form__input-group">
+	<div class="form__input-group {% if errors("phone") %} form__input-group--invalid {% endif %}">
 		<label class="form__label" for="contact-phone">Téléphone</label>
 		<input type="phone"
 		       name="phone"
@@ -35,9 +39,11 @@
 		       required
 		       maxlength="32"
 		>
-		{#						<div class="input__helper">Ceci est un message d’erreur</div>#}
+		{% for message in errors("phone") %}
+			<div class="input__helper">{{ message }}</div>
+		{% endfor %}
 	</div>
-	<div class="form__input-group">
+	<div class="form__input-group {% if errors("message") %} form__input-group--invalid {% endif %}">
 		<label class="form__label" for="contact-message">Message</label>
 		<textarea name="message"
 		          class="form__control"
@@ -46,7 +52,9 @@
 		          required
 		          maxlength="500"
 		></textarea>
-		{#						<div class="input__helper">Ceci est un message d’erreur</div>#}
+		{% for message in errors("message") %}
+			<div class="input__helper">{{ message }}</div>
+		{% endfor %}
 	</div>
 	<button class="form__submit">Envoyer mon message</button>
 	<p class="form__legal">

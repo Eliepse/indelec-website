@@ -2,6 +2,7 @@
 
 namespace App\Middlewares;
 
+use App\RedirectResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
@@ -22,7 +23,6 @@ class ValidateContactFormMiddleware
 		$inputs = $request->getParsedBody();
 		$inputs = is_array($inputs) ? $inputs : [];
 
-
 		if ($this->areInputMissing($inputs)) {
 			$response = new Response(403);
 			$response->getBody()->write("Missing required inputs.");
@@ -35,9 +35,11 @@ class ValidateContactFormMiddleware
 		$this->validateMessage($inputs['message']);
 
 		if (!empty($this->errors)) {
-			$response = new Response(400, new Headers(["Content-type" => "application/json"]));
-			$response->getBody()->write(json_encode($this->errors));
-			return $response;
+			flash()->addMessage("errors", $this->errors);
+			return new RedirectResponse(
+				$request->getHeaders()["referer"][0] . "#contact",
+				new Headers(["method" => "get"])
+			);
 		}
 
 		return $handler->handle($request);
