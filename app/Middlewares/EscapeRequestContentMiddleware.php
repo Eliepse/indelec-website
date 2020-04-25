@@ -22,7 +22,10 @@ class EscapeRequestContentMiddleware implements MiddlewareInterface
 		$inputs = $request->getParsedBody();
 
 		if (is_array($inputs)) {
-			$rslt = array_walk_recursive($inputs, fn(&$value) => $value = htmlentities($value, ENT_QUOTES | ENT_HTML5, true));
+			$rslt = array_walk_recursive(
+				$inputs,
+				fn(&$value) => $value = htmlentities($value, ENT_QUOTES | ENT_HTML5, "utf-8", true)
+			);
 			if (!$rslt) {
 				throw new ErrorException("Input could not be escaped, aborting to prevent processing unsafe data.", 500);
 			}
