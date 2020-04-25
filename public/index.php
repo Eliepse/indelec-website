@@ -37,10 +37,10 @@ $sessionMiddleware = (new PhpSession())
 $builder = new ContainerBuilder();
 $builder->useAutowiring(true);
 $builder->useAnnotations(false);
-if(env("APP_ENV") === "production") {
-	$builder->enableCompilation(__DIR__ . '/../storage/cache/phpdi');
-	$builder->writeProxiesToFile(true, __DIR__ . '/../storage/cache/proxies');
-}
+//if(env("APP_ENV") === "production") {
+//	$builder->enableCompilation(__DIR__ . '/../storage/cache/phpdi');
+//	$builder->writeProxiesToFile(true, __DIR__ . '/../storage/cache/proxies');
+//}
 $container = $builder->build();
 
 $app = Bridge::create($container);
