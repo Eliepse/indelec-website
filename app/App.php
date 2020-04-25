@@ -31,6 +31,8 @@ class App
 		$this->twig_env->addFunction(new TwigFunction("webpack", "webpack"));
 		$this->twig_env->addFunction(new TwigFunction("app", "app"));
 		$this->twig_env->addFunction(new TwigFunction("env", "env"));
+		$this->twig_env->addFunction(new TwigFunction("flash", "flash"));
+		$this->twig_env->addFunction(new TwigFunction("errors", "errors"));
 	}
 
 
