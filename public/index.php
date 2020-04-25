@@ -5,16 +5,31 @@ use App\App;
 use App\Middlewares\EscapeRequestContentMiddleware;
 use App\Middlewares\JsonBodyParserMiddleware;
 use DI\Bridge\Slim\Bridge;
+use Middlewares\PhpSession;
 
 require __DIR__ . '/../vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 $dotenv->required('APP_ENV')->notEmpty()->allowedValues(['local', 'production']);
+$dotenv->ifPresent('APP_SESSION_PREFIX')->notEmpty();
 $dotenv->required('META_TITLE')->notEmpty();
 $dotenv->required('META_DESCRIPTION')->notEmpty();
 $dotenv->required('CONTACT_TARGET_MAIL')->notEmpty();
 $dotenv->required('MAIL_FROM_ADDRESS')->notEmpty();
+
+$sessionMiddleware = (new PhpSession())
+	->name(env("APP_SESSION_PREFIX", "simpleApp") . "_session")
+	->options([
+		'use_strict_mode' => true,
+		'cookie_httponly' => true,
+		'use_only_cookies' => true,
+		'use_trans_sid' => true,
+		'sid_length' => 64,
+		'sid_bits_per_character' => 6,
+		'cookie_lifetime' => 3_600 * 24,
+	])
+	->regenerateId(3_600 * 24);
 
 $app = Bridge::create();
 
@@ -22,6 +37,7 @@ App::setApp($app);
 
 
 // Add global middlewares
+$app->addMiddleware($sessionMiddleware);
 $app->addMiddleware(new JsonBodyParserMiddleware());
 $app->addMiddleware(new EscapeRequestContentMiddleware());
 $app->addRoutingMiddleware();
