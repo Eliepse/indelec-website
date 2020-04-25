@@ -4,9 +4,7 @@
 	<meta charset="UTF-8">
 	<title>{{ env('META_TITLE') }} - Message envoyé</title>
 	<meta name="robots" content="noindex,nofollow">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="{{ webpack("css/styles.css") }}" type="text/css">
+	{% include "components/head.twig" %}
 </head>
 <body class="page--about">
 {% include "components/navigation.twig" %}
