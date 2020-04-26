@@ -6,6 +6,7 @@ use App\App;
 use App\Middlewares\EscapeRequestContentMiddleware;
 use App\Middlewares\FlashFormInputsMiddleware;
 use App\Middlewares\JsonBodyParserMiddleware;
+use App\Middlewares\SecureFrameOptionMiddleware;
 use DI\Bridge\Slim\Bridge;
 use DI\ContainerBuilder;
 use Middlewares\PhpSession;
@@ -54,6 +55,7 @@ $container->set(Messages::class, fn() => new Messages());
 // Add global middlewares
 $app->addMiddleware(new FlashFormInputsMiddleware());
 $app->addMiddleware(new JsonBodyParserMiddleware());
+$app->addMiddleware(new SecureFrameOptionMiddleware());
 $app->addMiddleware($sessionMiddleware);
 //$app->addMiddleware(new EscapeRequestContentMiddleware());
 $app->addRoutingMiddleware();
