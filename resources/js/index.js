@@ -10,6 +10,6 @@ checkScroll();
 
 document.querySelectorAll("a[fakemail]").forEach($link => unfakemail($link));
 
-document.addEventListener("DOMContentLoaded", function() {
-	yall({}); // Todo: Add lazy-loading for inline background-images
+document.addEventListener("DOMContentLoaded", function () {
+	yall();
 });

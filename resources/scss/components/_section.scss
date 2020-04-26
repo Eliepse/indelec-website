@@ -45,6 +45,7 @@
 .section__figure--full {
 	margin-top: 0;
 	margin-bottom: 6.4rem;
+
 	img {
 		width: 100%;
 	}
@@ -114,14 +115,14 @@
 	}
 
 	.section__figure {
-		height: 23rem;
+		//height: 23rem;
 		margin-bottom: 4.8rem;
 		margin-left: -$container-mobileSafeMargin;
 		margin-right: -$container-mobileSafeMargin;
 
-		img {
-			display: none;
-		}
+		//img {
+		//display: none;
+		//}
 	}
 
 	.section__bkg-symbol {
@@ -133,8 +134,8 @@
 	}
 }
 
-@media (max-width: $media-mobile) {
-	.section__figure {
-		height: 17.5rem;
-	}
-}
+//@media (max-width: $media-mobile) {
+//.section__figure {
+//height: 17.5rem;
+//}
+//}
