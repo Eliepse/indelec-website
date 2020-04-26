@@ -51,8 +51,8 @@ App::setApp($app);
 $container->set(Messages::class, fn() => new Messages());
 
 // Add global middlewares
-$app->addMiddleware($sessionMiddleware);
 $app->addMiddleware(new JsonBodyParserMiddleware());
+$app->addMiddleware($sessionMiddleware);
 //$app->addMiddleware(new EscapeRequestContentMiddleware());
 $app->addRoutingMiddleware();
 $app->addErrorMiddleware(app()->isLocal(), true, true);

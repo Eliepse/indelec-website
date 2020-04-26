@@ -23,7 +23,7 @@ $app->get('/services', ServicesController::class);
 $app->get('/clients', ClientsController::class);
 
 $app->post('/contact', [ContactController::class, 'sendMail'])
-	->add(new HoneypotMiddleware())
-	->add(new ValidateContactFormMiddleware());
+	->add(new ValidateContactFormMiddleware())
+	->add(new HoneypotMiddleware());
 
 $app->get("/message-sent", [ContactController::class, 'showSuccess']);
