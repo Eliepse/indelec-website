@@ -14,7 +14,7 @@ class HoneypotMiddleware
 
 	public function __invoke(Request $request, RequestHandler $handler): ResponseInterface
 	{
-		if ($request->getMethod() !== "POST")
+		if (strtoupper($request->getMethod()) !== "POST")
 			return new Response(403);
 
 		$inputs = $request->getParsedBody();
