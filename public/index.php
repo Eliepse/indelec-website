@@ -4,6 +4,7 @@ mb_internal_encoding("UTF-8");
 
 use App\App;
 use App\Middlewares\EscapeRequestContentMiddleware;
+use App\Middlewares\FlashFormInputsMiddleware;
 use App\Middlewares\JsonBodyParserMiddleware;
 use DI\Bridge\Slim\Bridge;
 use DI\ContainerBuilder;
@@ -51,6 +52,7 @@ App::setApp($app);
 $container->set(Messages::class, fn() => new Messages());
 
 // Add global middlewares
+$app->addMiddleware(new FlashFormInputsMiddleware());
 $app->addMiddleware(new JsonBodyParserMiddleware());
 $app->addMiddleware($sessionMiddleware);
 //$app->addMiddleware(new EscapeRequestContentMiddleware());

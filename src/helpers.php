@@ -92,3 +92,16 @@ if (!function_exists('errors')) {
 		return is_array($key_errors) ? $key_errors : [$key_errors];
 	}
 }
+
+if (!function_exists("old")) {
+	/**
+	 * @param string $key
+	 * @param mixed|string|null $default
+	 *
+	 * @return mixed|string|null
+	 */
+	function old(string $key, $default = null)
+	{
+		return flash()->getFirstMessage("old.$key", $default);
+	}
+}

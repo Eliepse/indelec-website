@@ -9,6 +9,7 @@
 		       placeholder="Vos nom et prénom..."
 		       required
 		       maxlength="50"
+		       value="{{ old("name") }}"
 		>
 		{% for message in errors("name") %}
 			<div class="input__helper">{{ message }}</div>
@@ -23,6 +24,7 @@
 		       placeholder="votre-email@exemple.fr"
 		       required
 		       maxlength="200"
+		       value="{{ old("email") }}"
 		>
 		{% for message in errors("email") %}
 			<div class="input__helper">{{ message }}</div>
@@ -38,6 +40,7 @@
 		       placeholder="01 23 45 67 89"
 		       required
 		       maxlength="32"
+		       value="{{ old("phone") }}"
 		>
 		{% for message in errors("phone") %}
 			<div class="input__helper">{{ message }}</div>
@@ -51,7 +54,7 @@
 		          placeholder="Votre message ici..."
 		          required
 		          maxlength="500"
-		></textarea>
+		>{{ old("message") }}</textarea>
 		{% for message in errors("message") %}
 			<div class="input__helper">{{ message }}</div>
 		{% endfor %}

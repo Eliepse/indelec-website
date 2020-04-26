@@ -33,6 +33,7 @@ class App
 		$this->twig_env->addFunction(new TwigFunction("env", "env"));
 		$this->twig_env->addFunction(new TwigFunction("flash", "flash"));
 		$this->twig_env->addFunction(new TwigFunction("errors", "errors"));
+		$this->twig_env->addFunction(new TwigFunction("old", "old"));
 	}
 
 
