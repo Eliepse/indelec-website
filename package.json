@@ -44,7 +44,7 @@
     "webpack-manifest-plugin": "^2.2.0"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1",
-    "yall-js": "^3.2.0"
+    "lazysizes": "^5.2.0",
+    "normalize.css": "^8.0.1"
   }
 }

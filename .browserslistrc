@@ -1,2 +1,4 @@
 # Browsers that we support
 defaults
+IE 10
+not IE_Mob 11
