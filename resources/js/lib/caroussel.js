@@ -17,7 +17,9 @@ class Caroussel {
 			this.moveNext();
 		};
 
-		this.startAutoplay();
+		if(this.autoplay) {
+			this.startAutoplay();
+		}
 	}
 
 	moveTo(index) {
