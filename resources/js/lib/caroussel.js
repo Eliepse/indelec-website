@@ -5,13 +5,27 @@ class Caroussel {
 		this.caret = 0;
 		this.length = this.$this.querySelectorAll(".caroussel__item").length;
 
-		this.$this.querySelector(".caroussel__arrow--left").onclick = () => this.movePrevious();
-		this.$this.querySelector(".caroussel__arrow--right").onclick = () => this.moveNext();
+		this.autoplay = true;
+		this.autoplayDelay = 3000;
+
+		this.$this.querySelector(".caroussel__arrow--left").onclick = () => {
+			this.stopAutoplay();
+			this.movePrevious();
+		};
+		this.$this.querySelector(".caroussel__arrow--right").onclick = () => {
+			this.stopAutoplay();
+			this.moveNext();
+		};
+
+		this.startAutoplay();
 	}
 
 	moveTo(index) {
 		this.caret = Math.min(this.length - 1, Math.max(0, index));
 		this.$list.style.left = -(this.$list.offsetWidth * this.caret) + "px";
+		if(this.autoplay) {
+			this.timer = setTimeout(() => {this.moveNext();}, this.autoplayDelay);
+		}
 	}
 
 	moveNext() {
@@ -28,6 +42,16 @@ class Caroussel {
 			return;
 		}
 		this.moveTo(this.caret - 1);
+	}
+
+	startAutoplay() {
+		this.autoplay = true;
+		this.timer = setTimeout(() => {this.moveNext();}, this.autoplayDelay);
+	}
+
+	stopAutoplay() {
+		this.autoplay = false;
+		clearTimeout(this.timer);
 	}
 }
 
