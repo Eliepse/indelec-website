@@ -5,7 +5,6 @@ Caroussel
 .caroussel {
 	position: relative;
 	margin: auto;
-	background-size: 14.9rem 11.8rem;
 }
 
 .caroussel__content {
@@ -15,31 +14,48 @@ Caroussel
 .caroussel__list {
 	position: relative;
 	left: 0;
+	top: 0;
 	display: flex;
 	flex-wrap: nowrap;
-	transition: left $transition-time-medium;
+	justify-content: start;
+	align-items: start;
+	transition: left $transition-time-slow;
 }
 
 .caroussel__item {
-	display: block;
+	flex: 0 0 100%;
 	padding: 0 2rem;
-	min-width: 100%;
 }
 
-.caroussel.caroussel--images {
+.caroussel--images {
 	width: 100%;
+
 	.caroussel__item {
 		padding: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 	}
 
 	img {
 		width: auto;
 		height: auto;
-		max-height: 100%;
 	}
+
+	figcaption {
+		max-width: 40rem;
+		margin: 1em auto;
+		font-size: .667em;
+		text-align: center;
+		line-height: 1.375;
+		color: $color-text-light;
+	}
+
+	.caroussel__controls {
+		bottom: 50%;
+
+	}
+		svg,
+		svg path {
+			fill: $color-white-broken;
+		}
 }
 
 .caroussel__controls {
@@ -49,6 +65,7 @@ Caroussel
 	right: 0;
 	display: flex;
 	justify-content: space-between;
+	transform: translateY(50%);
 }
 
 .caroussel__arrow {
