@@ -52,10 +52,11 @@ Caroussel
 		bottom: 50%;
 
 	}
-		svg,
-		svg path {
-			fill: $color-white-broken;
-		}
+
+	svg,
+	svg path {
+		fill: $color-white-broken;
+	}
 }
 
 .caroussel__controls {
