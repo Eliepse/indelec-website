@@ -1,7 +1,3 @@
-export const unfakemail = $link => {
-	$link.href = "mailto:" + $link.innerHTML.replace(/(<!--.*-->\s?|<span[a-z=": ;]*>.*<\/span>)+/gmi, "");
-};
+export const unfake = ($el) => $el.innerHTML.replace(/(<!--.*-->\s?|<span[a-z=": ;]*>.*<\/span>)+/gmi, "");
 
-export default (() => {
-	document.querySelectorAll("a[fakemail]").forEach($link => unfakemail($link));
-})();
+document.querySelectorAll("a[scrambledMail]").forEach($link => $link.href = "mailto:" + unfake($link));
