@@ -5,3 +5,6 @@ export const checkScroll = () => {
 		document.body.classList.remove('scrolled');
 	}
 };
+
+window.addEventListener('scroll', checkScroll);
+checkScroll();

@@ -23,7 +23,7 @@ class Caroussel {
 	moveTo(index) {
 		this.caret = Math.min(this.length - 1, Math.max(0, index));
 		this.$list.style.left = -(this.$list.offsetWidth * this.caret) + "px";
-		if(this.autoplay) {
+		if (this.autoplay) {
 			this.timer = setTimeout(() => {this.moveNext();}, this.autoplayDelay);
 		}
 	}
@@ -55,6 +55,4 @@ class Caroussel {
 	}
 }
 
-export default (() => {
-	document.querySelectorAll(".caroussel").forEach($el => new Caroussel($el));
-})();
+document.querySelectorAll(".caroussel").forEach($el => new Caroussel($el));
