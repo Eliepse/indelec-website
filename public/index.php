@@ -3,6 +3,7 @@ declare(strict_types=1);
 mb_internal_encoding("UTF-8");
 
 use App\App;
+use App\Middlewares\ContentSecurityPolicyMiddleware;
 use App\Middlewares\EscapeRequestContentMiddleware;
 use App\Middlewares\FlashFormInputsMiddleware;
 use App\Middlewares\JsonBodyParserMiddleware;
@@ -56,6 +57,13 @@ $container->set(Messages::class, fn() => new Messages());
 $app->addMiddleware(new FlashFormInputsMiddleware());
 $app->addMiddleware(new JsonBodyParserMiddleware());
 $app->addMiddleware(new SecureFrameOptionMiddleware());
+$app->addMiddleware(
+	new ContentSecurityPolicyMiddleware(
+		App::getInstance()->isLocal(),
+		"'self'",
+		["style-src" => "'self' 'unsafe-inline'"]
+	)
+);
 $app->addMiddleware($sessionMiddleware);
 //$app->addMiddleware(new EscapeRequestContentMiddleware());
 $app->addRoutingMiddleware();
