@@ -29,14 +29,15 @@ class ContentSecurityPolicyMiddleware implements MiddlewareInterface
 
 	public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
 	{
-		$response = $handler->handle($request);
 
-//		$headerValue = ["default-src {$this->defaultSrc}"];
+		$headerValue = ["default-src {$this->defaultSrc}"];
 		foreach ($this->directives as $name => $directive) {
 //			$hash = base64_encode(random_bytes(16));
 //			flash()->addMessage("hash.csp.$name", $hash);
 			$headerValue[] = "$name " . ($directive ?? $this->defaultSrc);
 		}
+
+		$response = $handler->handle($request);
 
 		return $response->withHeader(
 			$this->reportOnly ? "Content-Security-Policy-Report-Only" : "Content-Security-Policy",
