@@ -41,7 +41,7 @@ class ContentSecurityPolicyMiddleware implements MiddlewareInterface
 
 		return $response->withHeader(
 			$this->reportOnly ? "Content-Security-Policy-Report-Only" : "Content-Security-Policy",
-			join(", ", $headerValue)
+			join("; ", $headerValue)
 		);
 	}
 }
