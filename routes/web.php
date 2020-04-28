@@ -10,20 +10,16 @@ use Slim\App;
 use App\Middlewares\HoneypotMiddleware;
 use App\Middlewares\ValidateContactFormMiddleware;
 
-/**
- * @var App $app
- */
 
-
-$app->get('/', WelcomeController::class)
+$router->get('/', WelcomeController::class)
 	->add(InjectHoneypotMiddleware::class);
 
-$app->get('/about', AboutController::class);
-$app->get('/services', ServicesController::class);
-$app->get('/clients', ClientsController::class);
+$router->get('/about', AboutController::class);
+$router->get('/services', ServicesController::class);
+$router->get('/clients', ClientsController::class);
 
-$app->post('/contact', [ContactController::class, 'sendMail'])
+$router->post('/contact', [ContactController::class, 'sendMail'])
 	->add(new ValidateContactFormMiddleware())
 	->add(new HoneypotMiddleware());
 
-$app->get("/message-sent", [ContactController::class, 'showSuccess']);
+$router->get("/message-sent", [ContactController::class, 'showSuccess']);

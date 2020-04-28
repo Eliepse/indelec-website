@@ -45,31 +45,30 @@ $builder->useAnnotations(false);
 //	$builder->writeProxiesToFile(true, __DIR__ . '/../storage/cache/proxies');
 //}
 $container = $builder->build();
-
-$app = Bridge::create($container);
-
-App::setApp($app);
+$slimApp = Bridge::create($container);
+$router = $slimApp;
+$app = App::make($slimApp);
 
 // Inject services
 $container->set(Messages::class, fn() => new Messages());
 
 // Add global middlewares
-$app->addMiddleware(new FlashFormInputsMiddleware());
-$app->addMiddleware(new JsonBodyParserMiddleware());
-$app->addMiddleware(new SecureFrameOptionMiddleware());
-$app->addMiddleware(
+$slimApp->addMiddleware(new FlashFormInputsMiddleware());
+$slimApp->addMiddleware(new JsonBodyParserMiddleware());
+$slimApp->addMiddleware(new SecureFrameOptionMiddleware());
+$slimApp->addMiddleware(
 	new ContentSecurityPolicyMiddleware(
-		App::getInstance()->isLocal(),
+		$app->isLocal(),
 		"'self'",
 		["style-src" => "'self' 'unsafe-inline'"]
 	)
 );
-$app->addMiddleware($sessionMiddleware);
+$slimApp->addMiddleware($sessionMiddleware);
 //$app->addMiddleware(new EscapeRequestContentMiddleware());
-$app->addRoutingMiddleware();
-$app->addErrorMiddleware(app()->isLocal(), true, true);
+$slimApp->addRoutingMiddleware();
+$slimApp->addErrorMiddleware(app()->isLocal(), true, true);
 
 // Setup routes
 include_once '../routes/web.php';
 
-$app->run();
+$slimApp->run();

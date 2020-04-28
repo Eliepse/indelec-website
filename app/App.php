@@ -26,7 +26,7 @@ class App
 			[
 				'cache' => $this->isProd() ? $this->storage("cache/views") : false,
 				'debug' => $this->isLocal() && env("APP_DEBUG", false),
-				'strict_variables' => true
+				'strict_variables' => true,
 			]);
 		$this->twig_env->addFunction(new TwigFunction("webpack", "webpack"));
 		$this->twig_env->addFunction(new TwigFunction("app", "app"));
@@ -37,9 +37,9 @@ class App
 	}
 
 
-	public static function setApp(\Slim\App $app)
+	public static function make(\Slim\App $app): self
 	{
-		self::$_instance = new self($app);
+		return self::$_instance = new self($app);
 	}
 
 
