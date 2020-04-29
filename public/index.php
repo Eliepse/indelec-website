@@ -7,6 +7,7 @@ use App\Middlewares\ContentSecurityPolicyMiddleware;
 use App\Middlewares\EscapeRequestContentMiddleware;
 use App\Middlewares\FlashFormInputsMiddleware;
 use App\Middlewares\JsonBodyParserMiddleware;
+use App\Middlewares\MaintenanceMiddleware;
 use App\Middlewares\SecureFrameOptionMiddleware;
 use DI\Bridge\Slim\Bridge;
 use DI\ContainerBuilder;
@@ -18,6 +19,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 $dotenv->required('APP_ENV')->notEmpty()->allowedValues(['local', 'production']);
+$dotenv->required('APP_ONLINE')->isBoolean();
 $dotenv->ifPresent('APP_SESSION_PREFIX')->notEmpty();
 $dotenv->required('META_TITLE')->notEmpty();
 $dotenv->required('META_DESCRIPTION')->notEmpty();
@@ -64,6 +66,7 @@ $slimApp->addMiddleware(
 	)
 );
 $slimApp->addMiddleware($sessionMiddleware);
+$slimApp->addMiddleware(new MaintenanceMiddleware(env("APP_ONLINE", false), "offline"));
 //$app->addMiddleware(new EscapeRequestContentMiddleware());
 $slimApp->addRoutingMiddleware();
 $slimApp->addErrorMiddleware(app()->isLocal(), true, true);

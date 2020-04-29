@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ env('META_TITLE') }}{{ pageTitle ?? "" }}</title>
+	<meta name="robots" content="noindex,nofollow">
+	{% include "components/head.twig" %}
+</head>
+<body>
+{% include "components/navigation.twig" %}
+<main>
+
+	<section class="section container text--center">
+		<h1 class="title-primary">Site en maintenance</h1>
+		<p>
+			Le site n'est pas disponible pour le moment. Tentez de revenir plus tard.<br>
+			Merci de votre compréhension.
+		</p>
+	</section>
+
+</main>
+{% include "components/footer.twig" %}
+<script src="{{ webpack("js/index.js") }}"></script>
+</body>
+</html>
