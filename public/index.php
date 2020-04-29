@@ -66,7 +66,7 @@ $slimApp->addMiddleware(
 	)
 );
 $slimApp->addMiddleware($sessionMiddleware);
-$slimApp->addMiddleware(new MaintenanceMiddleware(env("APP_ONLINE", false)));
+$slimApp->addMiddleware(new MaintenanceMiddleware(!env("APP_ONLINE")));
 //$app->addMiddleware(new EscapeRequestContentMiddleware());
 $slimApp->addRoutingMiddleware();
 $slimApp->addErrorMiddleware(app()->isLocal(), true, true);
