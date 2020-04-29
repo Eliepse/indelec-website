@@ -16,15 +16,15 @@
 			</svg>
 		</a>
 		<ul class="navigation__list">
-			<li class="navigation__item {{ page == 'services' ? 'navigation__item--active':'' }}"><a href="/services">
+			<li class="navigation__item {{ page ?? "" == 'services' ? 'navigation__item--active':'' }}"><a href="/services">
 					<span class="hide--mobile">Nos services</span>
 					<span class="show--mobile">Services</span>
 				</a></li>
-			<li class="navigation__item {{ page == 'about' ? 'navigation__item--active':'' }}"><a href="/about">
+			<li class="navigation__item {{ page ?? "" == 'about' ? 'navigation__item--active':'' }}"><a href="/about">
 					<span class="hide--mobile">Notre entreprise</span>
 					<span class="show--mobile">Entrerpise</span>
 				</a></li>
-			<li class="navigation__item {{ page == 'clients' ? 'navigation__item--active':'' }}"><a href="/clients">
+			<li class="navigation__item {{ page ?? "" == 'clients' ? 'navigation__item--active':'' }}"><a href="/clients">
 					<span class="hide--mobile">Nos clients</span>
 					<span class="show--mobile">Clients</span>
 				</a></li>
