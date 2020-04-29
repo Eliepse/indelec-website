@@ -15,7 +15,26 @@ if (!function_exists("env")) {
 	 */
 	function env(string $key, $default = null)
 	{
-		return getenv($key) ?? $default;
+		if(!isset($_ENV[ $key ])) {
+			return $default;
+		}
+
+		$value = getenv($key);
+
+		switch (strtolower($value)) {
+			case 'true':
+				return true;
+			case 'false':
+				return false;
+			case 'null':
+				return null;
+		}
+
+//		if (Str::startsWith($value, '"') && Str::endsWith($value, '"')) {
+//			return substr($value, 1, -1);
+//		}
+
+		return $value;
 	}
 }
 
