@@ -4,6 +4,7 @@ use App\Controllers\AboutController;
 use App\Controllers\ClientsController;
 use App\Controllers\ContactController;
 use App\Controllers\ServicesController;
+use App\Controllers\SitemapController;
 use App\Controllers\WelcomeController;
 use App\Middlewares\InjectHoneypotMiddleware;
 use Slim\App;
@@ -23,3 +24,4 @@ $router->post('/contact', [ContactController::class, 'sendMail'])
 	->add(new HoneypotMiddleware());
 
 $router->get("/message-sent", [ContactController::class, 'showSuccess']);
+$router->get("/sitemap.xml", SitemapController::class);
