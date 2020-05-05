@@ -24,7 +24,7 @@ class App
 		$this->twig_env = new Environment(
 			$this->twig_fs,
 			[
-				'cache' => $this->isProd() ? $this->storage("cache/views") : false,
+				'cache' => $this->isProd() ? $this->storage("framework/views") : false,
 				'debug' => $this->isLocal() && env("APP_DEBUG", false),
 				'strict_variables' => true,
 			]);
