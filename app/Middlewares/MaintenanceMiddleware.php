@@ -2,6 +2,8 @@
 
 namespace App\Middlewares;
 
+use DateInterval;
+use DateTime;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -35,7 +37,13 @@ class MaintenanceMiddleware implements MiddlewareInterface
 
 		$queryToken = $request->getQueryParams()["bypassToken"] ?? null;
 
+		if ($this->validateSessionBypass()) {
+			$this->resetSessionBypass();
+			return $handler->handle($request);
+		}
+
 		if (!empty($queryToken) && $queryToken === $this->token) {
+			$this->resetSessionBypass();
 			return $handler->handle($request);
 		}
 
@@ -58,5 +66,32 @@ class MaintenanceMiddleware implements MiddlewareInterface
 		}
 
 		return $this->generateBypassToken();
+	}
+
+
+	private function resetSessionBypass(): void
+	{
+		$expiresIn = new DateInterval("P15M");
+		$_SESSION[ $this->tokenKey ] = [
+			"expires_at" => (new DateTime())->add($expiresIn)->getTimestamp(),
+			"token" => $this->token,
+		];
+	}
+
+
+	private function validateSessionBypass(): bool
+	{
+		if (!isset($_SESSION[ $this->tokenKey ])) {
+			return false;
+		}
+
+		$expires_at = $_SESSION[ $this->tokenKey ]["expires_at"] ?? 0;
+		$token = $_SESSION[ $this->tokenKey ]["token"] ?? null;
+
+		if ($expires_at < (new DateTime())->getTimestamp()) {
+			return false;
+		}
+
+		return !empty($token) && $token === $this->token;
 	}
 }

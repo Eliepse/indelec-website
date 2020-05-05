@@ -66,8 +66,8 @@ $slimApp->addMiddleware(
 		["style-src" => "'self' 'unsafe-inline'"]
 	)
 );
-$slimApp->addMiddleware($sessionMiddleware);
 $slimApp->addMiddleware(new MaintenanceMiddleware(!env("APP_ONLINE")));
+$slimApp->addMiddleware($sessionMiddleware);
 //$app->addMiddleware(new EscapeRequestContentMiddleware());
 $slimApp->addRoutingMiddleware();
 $slimApp->addErrorMiddleware(app()->isLocal(), true, true);
