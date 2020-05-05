@@ -23,4 +23,4 @@ yarn run prod
 
 echo ""
 echo "Removing cache"
-rm -rf ./storage/cache/*
+rm -rf ./storage/framework/*

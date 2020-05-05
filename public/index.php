@@ -21,6 +21,7 @@ $dotenv->load();
 $dotenv->required('APP_ENV')->notEmpty()->allowedValues(['local', 'production']);
 $dotenv->required('APP_ONLINE')->isBoolean();
 $dotenv->ifPresent('APP_SESSION_PREFIX')->notEmpty();
+$dotenv->ifPresent('APP_CACHE_PREFIX')->notEmpty();
 $dotenv->required('META_TITLE')->notEmpty();
 $dotenv->required('META_DESCRIPTION')->notEmpty();
 $dotenv->required('CONTACT_TARGET_MAIL')->notEmpty();
@@ -43,8 +44,8 @@ $builder = new ContainerBuilder();
 $builder->useAutowiring(true);
 $builder->useAnnotations(false);
 //if(env("APP_ENV") === "production") {
-//	$builder->enableCompilation(__DIR__ . '/../storage/cache/phpdi');
-//	$builder->writeProxiesToFile(true, __DIR__ . '/../storage/cache/proxies');
+//	$builder->enableCompilation(__DIR__ . '/../storage/framework/phpdi');
+//	$builder->writeProxiesToFile(true, __DIR__ . '/../storage/framework/proxies');
 //}
 $container = $builder->build();
 $slimApp = Bridge::create($container);

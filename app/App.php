@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Doctrine\Common\Cache\PhpFileCache;
 use Error;
 use ErrorException;
 use Twig\Environment;
@@ -15,11 +16,14 @@ class App
 	private \Slim\App $app;
 	private FilesystemLoader $twig_fs;
 	private Environment $twig_env;
+	private PhpFileCache $cache;
 
 
 	private function __construct(\Slim\App $app)
 	{
 		$this->app = $app;
+		$this->cache = new PhpFileCache($this->storage("framework/cache"));
+		$this->cache->setNamespace(env("APP_CACHE_PREFIX", "simpleApp_"));
 		$this->twig_fs = new FilesystemLoader($this->resources("views"));
 		$this->twig_env = new Environment(
 			$this->twig_fs,
@@ -64,6 +68,12 @@ class App
 	public function getTwigEnvironment(): Environment
 	{
 		return $this->twig_env;
+	}
+
+
+	public function getCache(): PhpFileCache
+	{
+		return $this->cache;
 	}
 
 
