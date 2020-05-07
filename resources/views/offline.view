@@ -2,12 +2,12 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>{{ env('META_TITLE') }}{{ pageTitle ?? "" }}</title>
+	<title>{{ env('META_TITLE') }}{{ $pageTitle ?? "" }}</title>
 	<meta name="robots" content="noindex,nofollow">
-	{% include "components/head.twig" %}
+	{% include "components/head.view" %}
 </head>
 <body>
-{% include "components/navigation.twig" %}
+{% include "components/navigation.view" %}
 <main>
 
 	<section class="section container text--center">
@@ -19,7 +19,7 @@
 	</section>
 
 </main>
-{% include "components/footer.twig" %}
+{% include "components/footer.view" %}
 <script src="{{ webpack("js/index.js") }}"></script>
 </body>
 </html>

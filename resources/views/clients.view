@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>{{ env('META_TITLE') }}{{ pageTitle ?? "" }}</title>
-	{% include "components/head.twig" %}
+	<title>{{ env('META_TITLE') }}{{ $pageTitle ?? "" }}</title>
+	{% include "components/head.view" %}
 </head>
 <body class="page--clients">
-{% include "components/navigation.twig" %}
+{% include "components/navigation.view" %}
 <main>
 
 	{# Nos clients #}
@@ -21,13 +21,13 @@
 				Nous entretenons une relation de confiance avec nos clients.
 			</p>
 			<ul class="clients_list">
-				{% include "components/clients_list.twig" %}
+				{% include "components/clients_list.view" %}
 			</ul>
 		</div>
 	</section>
 
 </main>
-{% include "components/footer.twig" %}
+{% include "components/footer.view" %}
 <script src="{{ webpack("js/index.js") }}"></script>
 </body>
 </html>

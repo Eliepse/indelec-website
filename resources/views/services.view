@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>{{ env('META_TITLE') }}{{ pageTitle ?? "" }}</title>
-	{% include "components/head.twig" %}
+	<title>{{ env('META_TITLE') }}{{ $pageTitle ?? "" }}</title>
+	{% include "components/head.view" %}
 </head>
 <body class="page--services">
-{% include "components/navigation.twig" %}
+{% include "components/navigation.view" %}
 <main>
 
 	{# Nos services #}
@@ -52,7 +52,7 @@
 	</section>
 
 </main>
-{% include "components/footer.twig" %}
+{% include "components/footer.view" %}
 <script src="{{ webpack("js/index.js") }}"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>{{ subject }}</title>
+	<title>{{ $subject }}</title>
 	<style></style>
 </head>
 <body>
@@ -12,12 +12,12 @@
 </p>
 
 <p>
-	De <strong>{{ name }}</strong> (<a href="mailto:{{ email }}">{{ email }}</a>, {{ phone }}),<br>
-	le {{ created_at }}
+	De <strong>{{ $name }}</strong> (<a href="mailto:{{ $email }}">{{ $email }}</a>, {{ $phone }}),<br>
+	le {{ $created_at }}
 </p>
 
 <blockquote>
-	{{ message|nl2br }}
+	{{ nl2br($message) }}
 </blockquote>
 
 </body>

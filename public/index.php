@@ -54,6 +54,7 @@ $router = $slimApp;
 $app = App::make($slimApp);
 $app->loadLoggerSystem();
 $app->loadCacheSystem();
+$app->loadTemplatingSystem();
 
 // Inject services
 $container->set(Messages::class, fn() => new Messages());

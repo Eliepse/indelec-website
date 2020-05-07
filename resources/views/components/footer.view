@@ -22,8 +22,8 @@
 				{# <!--suppress HtmlUnknownAttribute --> #}
 				<li>
 					41&nbsp;bis&nbsp;-&nbsp;43<br>
-					Boulevard Ro<!--honey-->{##}ger Sale<span style="display: none;">honey</span>ngro<br>
-					93<!-- honey -->{##}130 Noi<!-- honey -->{##}sy-le-Sec
+					Boulevard Ro<!--honey-->{# #}ger Sale<span style="display: none;">honey</span>ngro<br>
+					93<!-- honey -->{# #}130 Noi<!-- honey -->{# #}sy-le-Sec
 				</li>
 				{# <!--suppress HtmlUnknownAttribute --> #}
 				<li>
@@ -32,7 +32,7 @@
 				</li>
 				<li>
 					{# <!--suppress HtmlUnknownAttribute --> #}
-					<a scrambledMail>contact@in<!--honey-->{##}del<span style="display: none;">honey</span>ecsa.fr</a>
+					<a scrambledMail>contact@in<!--honey-->{# #}del<span style="display: none;">honey</span>ecsa.fr</a>
 				</li>
 			</ul>
 		</div>
@@ -86,11 +86,6 @@
 						</svg>
 					</a>
 				</li>
-				{#<li>
-					<a href="javascript:void(0)" rel="noopener nofollow">
-						<img src="/img/socials/facebook.svg" alt="Facebook" class="symbol">
-					</a>
-				</li>#}
 			</ul>
 			<cite class="footer__author">Réalisation :
 				<a href="https://agency-ye.com" rel="author noopener">Agency YE!</a></cite>

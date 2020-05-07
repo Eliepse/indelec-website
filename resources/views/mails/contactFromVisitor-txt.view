@@ -1,8 +1,8 @@
 Bonjour,
 Vous avez reçu un nouveau message d'un visiteur du site web.
 
-De {{ name }} ({{ email }}, {{ phone }}),
-le {{ created_at }}
+De {{ $name }} ({{ $email }}, {{ $phone }}),
+le {{ $created_at }}
 =========================================
-{{ message }}
+{{ $message }}
 

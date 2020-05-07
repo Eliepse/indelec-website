@@ -15,7 +15,7 @@ if (!function_exists("env")) {
 	 */
 	function env(string $key, $default = null)
 	{
-		if(!isset($_ENV[ $key ])) {
+		if (!isset($_ENV[ $key ])) {
 			return $default;
 		}
 
@@ -74,9 +74,15 @@ if (!function_exists('webpack')) {
 if (!function_exists("view")) {
 	function view(string $name, array $values = []): Response
 	{
-		$name .= pathinfo($name, PATHINFO_EXTENSION) ?: ".twig";
+		$engine = App::getInstance()->getTemplateEngine();
+		$name .= pathinfo($name, PATHINFO_EXTENSION) ?: ".view";
 		$response = new Response(StatusCodeInterface::STATUS_OK);
-		$response->getBody()->write(app()->getTwigEnvironment()->render($name, $values));
+
+		foreach ($values as $key => $value) {
+			$engine->addGlobal($key, $value);
+		}
+
+		$response->getBody()->write($engine->render($name));
 		return $response;
 	}
 }
@@ -89,20 +95,20 @@ if (!function_exists('flash')) {
 }
 
 if (!function_exists('errors')) {
-	function errors(string $key): ?array
+	function errors(string $key): array
 	{
 		$all_errors = flash()->getFirstMessage("errors");
 
 		if (empty($all_errors))
-			return null;
+			return [];
 
 		if (!isset($all_errors[ $key ]))
-			return null;
+			return [];
 
 		$key_errors = $all_errors[ $key ];
 
 		if (empty($key_errors))
-			return null;
+			return [];
 
 		return is_array($key_errors) ? $key_errors : [$key_errors];
 	}

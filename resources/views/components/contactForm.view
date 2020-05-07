@@ -11,8 +11,8 @@
 		       maxlength="50"
 		       value="{{ old("name") }}"
 		>
-		{% for message in errors("name") %}
-			<div class="input__helper">{{ message }}</div>
+		{% for errors("name") as $message %}
+			<div class="input__helper">{{ $message }}</div>
 		{% endfor %}
 	</div>
 	<div class="form__input-group {% if errors("email") %} form__input-group--invalid {% endif %}">
@@ -26,8 +26,8 @@
 		       maxlength="200"
 		       value="{{ old("email") }}"
 		>
-		{% for message in errors("email") %}
-			<div class="input__helper">{{ message }}</div>
+		{% for errors("email") as $message %}
+			<div class="input__helper">{{ $message }}</div>
 		{% endfor %}
 	</div>
 	<div class="form__input-group {% if errors("phone") %} form__input-group--invalid {% endif %}">
@@ -42,8 +42,8 @@
 		       maxlength="32"
 		       value="{{ old("phone") }}"
 		>
-		{% for message in errors("phone") %}
-			<div class="input__helper">{{ message }}</div>
+		{% for errors("phone") as $message %}
+			<div class="input__helper">{{ $message }}</div>
 		{% endfor %}
 	</div>
 	<div class="form__input-group {% if errors("message") %} form__input-group--invalid {% endif %}">
@@ -55,8 +55,8 @@
 		          required
 		          maxlength="500"
 		>{{ old("message") }}</textarea>
-		{% for message in errors("message") %}
-			<div class="input__helper">{{ message }}</div>
+		{% for errors("message") as $message %}
+			<div class="input__helper">{{ $message }}</div>
 		{% endfor %}
 	</div>
 	<button class="form__submit">Envoyer mon message</button>

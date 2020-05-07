@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>{{ env('META_TITLE') }}{{ pageTitle ?? "" }}</title>
-	{% include "components/head.twig" %}
+	<title>{{ env('META_TITLE') }}{{ $pageTitle ?? "" }}</title>
+	{% include "components/head.view" %}
 </head>
 <body class="page--welcome">
-{% include "components/navigation.twig" %}
+{% include "components/navigation.view" %}
 <main>
 
 	<header class="welcome__header">
@@ -108,7 +108,7 @@
 	<section class="section section--brokenWhite">
 		<div class="section__content container section__content--col">
 			<div>
-				{% include "components/history-slider.twig" %}
+				{% include "components/history-slider.view" %}
 			</div>
 			<div>
 				<h2 class="section__title title-primary">Une expérience historique</h2>
@@ -136,7 +136,7 @@
 	{# Citation et partenaires #}
 	<section class="section container">
 		<div class="section__content">
-			{% include "components/welcome_quotes.twig" %}
+			{% include "components/welcome_quotes.view" %}
 			<ul class="welcome__logos">
 				<li>
 					<figure>
@@ -204,8 +204,8 @@
 				{# <!--suppress HtmlUnknownAttribute --> #}
 				<address>
 					41&nbsp;bis&nbsp;-&nbsp;43<br>
-					Boulevard Ro<!--honey-->{##}ger Sale<span style="display: none;">honey</span>ngro<br>
-					93<!-- honey -->{##}130 Noi<!-- honey -->{##}sy-le-Sec
+					Boulevard Ro<!--honey-->{# #}ger Sale<span style="display: none;">honey</span>ngro<br>
+					93<!-- honey -->{# #}130 Noi<!-- honey -->{# #}sy-le-Sec
 				</address>
 				<ul>
 					{# <!--suppress HtmlUnknownAttribute --> #}
@@ -219,17 +219,17 @@
 				</ul>
 				<p>
 					{# <!--suppress HtmlUnknownAttribute --> #}
-					<a scrambledMail>contact@in<!--honey-->{##}del<span style="display: none;">honey</span>ecsa.fr</a>
+					<a scrambledMail>contact@in<!--honey-->{# #}del<span style="display: none;">honey</span>ecsa.fr</a>
 				</p>
 			</div>
 			<div>
-				{% include "components/contactForm.twig" %}
+				{% include "components/contactForm.view" %}
 			</div>
 		</div>
 	</section>
 
 </main>
-{% include "components/footer.twig" %}
+{% include "components/footer.view" %}
 <script src="{{ webpack("js/index.js") }}"></script>
 </body>
 </html>

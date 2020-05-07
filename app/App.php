@@ -3,22 +3,23 @@
 namespace App;
 
 use Doctrine\Common\Cache\PhpFileCache;
+use Eliepse\Templating\ViewFileSystemLoader;
 use Error;
 use ErrorException;
-use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
-use Twig\TwigFunction;
-use Monolog\Handler\StreamHandler;
+use Monolog\Formatter\LineFormatter;
+use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\Templating\EngineInterface;
+use Symfony\Component\Templating\PhpEngine;
+use Symfony\Component\Templating\TemplateNameParser;
 
 class App
 {
 	private static self $_instance;
 
 	private \Slim\App $app;
-	private FilesystemLoader $twig_fs;
-	private Environment $twig_env;
+	private PhpEngine $templating;
 	private PhpFileCache $cache;
 	private Logger $logger;
 
@@ -26,22 +27,6 @@ class App
 	private function __construct(\Slim\App $app)
 	{
 		$this->app = $app;
-		$this->cache = new PhpFileCache($this->storage("framework/cache"));
-		$this->cache->setNamespace(env("APP_CACHE_PREFIX", "simpleApp_"));
-		$this->twig_fs = new FilesystemLoader($this->resources("views"));
-		$this->twig_env = new Environment(
-			$this->twig_fs,
-			[
-				'cache' => $this->isProd() ? $this->storage("framework/views") : false,
-				'debug' => $this->isLocal() && env("APP_DEBUG", false),
-				'strict_variables' => true,
-			]);
-		$this->twig_env->addFunction(new TwigFunction("webpack", "webpack"));
-		$this->twig_env->addFunction(new TwigFunction("app", "app"));
-		$this->twig_env->addFunction(new TwigFunction("env", "env"));
-		$this->twig_env->addFunction(new TwigFunction("flash", "flash"));
-		$this->twig_env->addFunction(new TwigFunction("errors", "errors"));
-		$this->twig_env->addFunction(new TwigFunction("old", "old"));
 	}
 
 
@@ -81,15 +66,25 @@ class App
 		$this->cache = new PhpFileCache($this->storage("framework/cache"));
 		$this->cache->setNamespace(env("APP_CACHE_PREFIX", "simpleApp_"));
 	}
+
+
+	public function loadTemplatingSystem(): void
+	{
+		$filesystem = new ViewFileSystemLoader([$this->resources("views") . "/%name%"]);
+		$filesystem->setLogger($this->logger);
+		$this->templating = new PhpEngine(new TemplateNameParser(), $filesystem);
+	}
+
+
 	public function getApp(): \Slim\App
 	{
 		return $this->app;
 	}
 
 
-	public function getTwigEnvironment(): Environment
+	public function getTemplateEngine(): EngineInterface
 	{
-		return $this->twig_env;
+		return $this->templating;
 	}
 
 
@@ -141,6 +136,7 @@ class App
 	 *
 	 * @return string
 	 * @throws ErrorException
+	 * @noinspection PhpUnused
 	 */
 	public function webpack(string $asset_path, ?string $default = null): string
 	{
