@@ -8,6 +8,9 @@ use ErrorException;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\TwigFunction;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+use Psr\Log\LoggerInterface;
 
 class App
 {
@@ -17,6 +20,7 @@ class App
 	private FilesystemLoader $twig_fs;
 	private Environment $twig_env;
 	private PhpFileCache $cache;
+	private Logger $logger;
 
 
 	private function __construct(\Slim\App $app)
@@ -59,6 +63,18 @@ class App
 	}
 
 
+	public function loadLoggerSystem(): void
+	{
+		$this->logger = new Logger("daily");
+		$this->logger->pushHandler(new StreamHandler($this->storage("logs/" . date("ymd") . ".log"), Logger::DEBUG));
+	}
+
+
+	public function loadCacheSystem(): void
+	{
+		$this->cache = new PhpFileCache($this->storage("framework/cache"));
+		$this->cache->setNamespace(env("APP_CACHE_PREFIX", "simpleApp_"));
+	}
 	public function getApp(): \Slim\App
 	{
 		return $this->app;
@@ -135,5 +151,11 @@ class App
 		}
 
 		return $manifest[ $asset_path ];
+	}
+
+
+	public function getLogger(): LoggerInterface
+	{
+		return $this->logger;
 	}
 }

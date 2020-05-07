@@ -4,7 +4,6 @@ mb_internal_encoding("UTF-8");
 
 use App\App;
 use App\Middlewares\ContentSecurityPolicyMiddleware;
-use App\Middlewares\EscapeRequestContentMiddleware;
 use App\Middlewares\FlashFormInputsMiddleware;
 use App\Middlewares\JsonBodyParserMiddleware;
 use App\Middlewares\MaintenanceMiddleware;
@@ -12,6 +11,7 @@ use App\Middlewares\SecureFrameOptionMiddleware;
 use DI\Bridge\Slim\Bridge;
 use DI\ContainerBuilder;
 use Middlewares\PhpSession;
+use Psr\Log\LoggerInterface;
 use Slim\Flash\Messages;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -50,10 +50,14 @@ $builder->useAnnotations(false);
 $container = $builder->build();
 $slimApp = Bridge::create($container);
 $router = $slimApp;
+
 $app = App::make($slimApp);
+$app->loadLoggerSystem();
+$app->loadCacheSystem();
 
 // Inject services
 $container->set(Messages::class, fn() => new Messages());
+$container->set(LoggerInterface::class, $app->getLogger());
 
 // Add global middlewares
 $slimApp->addMiddleware(new FlashFormInputsMiddleware());
@@ -70,7 +74,7 @@ $slimApp->addMiddleware(new MaintenanceMiddleware(!env("APP_ONLINE")));
 $slimApp->addMiddleware($sessionMiddleware);
 //$app->addMiddleware(new EscapeRequestContentMiddleware());
 $slimApp->addRoutingMiddleware();
-$slimApp->addErrorMiddleware(app()->isLocal(), true, true);
+$slimApp->addErrorMiddleware(app()->isLocal(), true, true, $app->getLogger());
 
 // Setup routes
 include_once '../routes/web.php';
