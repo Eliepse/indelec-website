@@ -3,6 +3,7 @@
 /logs/*
 /node_modules/
 /storage/framework/*
+/storage/logs/*
 /public/css
 /public/js
 /public/img

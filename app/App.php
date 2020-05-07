@@ -65,8 +65,14 @@ class App
 
 	public function loadLoggerSystem(): void
 	{
-		$this->logger = new Logger("daily");
-		$this->logger->pushHandler(new StreamHandler($this->storage("logs/" . date("ymd") . ".log"), Logger::DEBUG));
+		$stream = new RotatingFileHandler($this->storage("logs/log.log"), 7, Logger::DEBUG);
+		$stream->setFormatter(new LineFormatter(
+			"[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n",
+			"Y-m-d H:i:s"
+		));
+
+		$this->logger = new Logger("local");
+		$this->logger->pushHandler($stream);
 	}
 
 
