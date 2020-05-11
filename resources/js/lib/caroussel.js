@@ -6,16 +6,23 @@ class Caroussel {
 		this.length = this.$this.querySelectorAll(".caroussel__item").length;
 
 		this.autoplay = true;
-		this.autoplayDelay = 3000;
+		this.autoplayDelay = 4000;
 
-		this.$this.querySelector(".caroussel__arrow--left").onclick = () => {
-			this.stopAutoplay();
-			this.movePrevious();
-		};
-		this.$this.querySelector(".caroussel__arrow--right").onclick = () => {
-			this.stopAutoplay();
-			this.moveNext();
-		};
+		const arrLeft = this.$this.querySelector(".caroussel__arrow--left");
+		if(arrLeft) {
+			arrLeft.onclick = () => {
+				this.stopAutoplay();
+				this.movePrevious();
+			};
+		}
+
+		const arrRight = this.$this.querySelector(".caroussel__arrow--right");
+		if(arrRight) {
+			arrRight.onclick = () => {
+				this.stopAutoplay();
+				this.moveNext();
+			};
+		}
 
 		if(this.autoplay) {
 			this.startAutoplay();
