@@ -78,6 +78,18 @@
 				<p>En 2020, INDéLEC a participé au 4L Trophy, un événement humanitaire en Afrique du Nord.</p>
 			</figcaption>
 		</figure>
+		<figure class="sponsoring">
+			<img class="lazyload" src="/img/cap-efrei-edhec.placeholder.jpg"
+			     data-src="/img/cap-efrei-edhec.jpg"
+			     alt="Les équipages Cap EFREI posent sur un bâteau">
+			<figcaption class="sponsoring__description">
+				<h3>Course Croisière EDHEC</h3>
+				<p>
+					En 2018, INDéLEC a sponsorisé les équipages Cap EFREI de l'école d'ingénieurs
+					EFREI Paris à la Course Croisière EDHEC dans le Golfe du Morbihan.
+				</p>
+			</figcaption>
+		</figure>
 	</section>
 
 </main>
