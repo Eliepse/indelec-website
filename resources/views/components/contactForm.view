@@ -62,6 +62,6 @@
 	<button class="form__submit">Envoyer mon message</button>
 	<p class="form__legal">
 		Les informations transmises sont utilisées uniquement dans le cadre de la prise de contact
-		et ne feront pas l’objet de prospection commercial, ni de partage à des tiers.
+		et ne feront pas l’objet de prospection commerciale, ni de partage à des tiers.
 	</p>
 </form>
