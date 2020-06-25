@@ -13,6 +13,7 @@ const plugins = [];
 
 module.exports = (env, argv) => {
 	const isProd = () => argv.mode === 'production';
+	process.env.NODE_ENV = isProd() ? 'production' : 'development';
 
 	if (isProd()) {
 		plugins.push(new MinifyJsPlugin())
