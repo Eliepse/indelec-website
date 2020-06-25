@@ -22,7 +22,7 @@
 				</a></li>
 			<li class="navigation__item {{ ($page ?? "") === 'about' ? 'navigation__item--active':'' }}"><a href="/about">
 					<span class="hide--mobile">Notre entreprise</span>
-					<span class="show--mobile">Entrerpise</span>
+					<span class="show--mobile">Entreprise</span>
 				</a></li>
 			<li class="navigation__item {{ ($page ?? "") === 'clients' ? 'navigation__item--active':'' }}"><a href="/clients">
 					<span class="hide--mobile">Nos clients</span>
