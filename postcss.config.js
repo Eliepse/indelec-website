@@ -4,6 +4,12 @@ module.exports = ({file, options, env}) => ({
 	plugins: {
 		'autoprefixer': {},
 		'postcss-preset-env': {},
-		'cssnano': env === 'production' ? {} : false
+		'cssnano': env === 'production' ? {
+			preset: ['default', {
+				discardComments: {
+					removeAll: true,
+				}
+			}]
+		} : false
 	}
 });
