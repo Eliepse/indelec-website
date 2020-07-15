@@ -138,33 +138,33 @@
 		<div class="section__content">
 			{% include "components/welcome_quotes.view" %}
 			<ul class="welcome__logos">
-				<li>
-					<figure>
-						<div><img src="/img/logos/matmut.png" alt="Logo Matmut"></div>
-						<figcaption>
-							Matmut<br>
-							depuis 1988
-						</figcaption>
-					</figure>
-				</li>
-				<li>
-					<figure>
-						<div><img src="/img/logos/gecina.png" alt="Logo Gecina"></div>
-						<figcaption>
-							Gecina<br>
-							depuis 1998
-						</figcaption>
-					</figure>
-				</li>
-				<li>
-					<figure>
-						<div><img src="/img/logos/campusea.png" alt="Logo Campusea"></div>
-						<figcaption>
-							Campusea<br>
-							depuis 2007
-						</figcaption>
-					</figure>
-				</li>
+{#				<li>#}
+{#					<figure>#}
+{#						<div><img src="/img/logos/matmut.png" alt="Logo Matmut"></div>#}
+{#						<figcaption>#}
+{#							Matmut<br>#}
+{#							depuis 1988#}
+{#						</figcaption>#}
+{#					</figure>#}
+{#				</li>#}
+{#				<li>#}
+{#					<figure>#}
+{#						<div><img src="/img/logos/gecina.png" alt="Logo Gecina"></div>#}
+{#						<figcaption>#}
+{#							Gecina<br>#}
+{#							depuis 1998#}
+{#						</figcaption>#}
+{#					</figure>#}
+{#				</li>#}
+{#				<li>#}
+{#					<figure>#}
+{#						<div><img src="/img/logos/campusea.png" alt="Logo Campusea"></div>#}
+{#						<figcaption>#}
+{#							Campusea<br>#}
+{#							depuis 2007#}
+{#						</figcaption>#}
+{#					</figure>#}
+{#				</li>#}
 				<li>
 					<figure>
 						<div><img src="/img/logos/hotel-vignon.png" alt="Logo Hôtel Le Vignon"></div>
@@ -174,15 +174,15 @@
 						</figcaption>
 					</figure>
 				</li>
-				<li>
-					<figure>
-						<div><img src="/img/logos/agro-paris-tech.png" alt="Logo Agro Paris Tech"></div>
-						<figcaption>
-							AgroParisTech<br>
-							depuis 2014
-						</figcaption>
-					</figure>
-				</li>
+{#				<li>#}
+{#					<figure>#}
+{#						<div><img src="/img/logos/agro-paris-tech.png" alt="Logo Agro Paris Tech"></div>#}
+{#						<figcaption>#}
+{#							AgroParisTech<br>#}
+{#							depuis 2014#}
+{#						</figcaption>#}
+{#					</figure>#}
+{#				</li>#}
 				<li>
 					<figure>
 						<div><img src="/img/logos/apprentis-auteuil.png" alt="Logo Apprentis d’Auteuil"></div>

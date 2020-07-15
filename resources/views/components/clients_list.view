@@ -1,18 +1,18 @@
 {# Matmut #}
-<li class="ccard">
-	<figure class="ccard__logo">
-		<img src="/img/logos/matmut.png" alt="Logo Matmut">
-	</figure>
-	<div class="ccard__content">
-		<h2 class="ccard__title title-secondary">
-			Matmut<br>
-			<span>depuis 1988</span>
-		</h2>
-		<p class="ccard__description">
-			Création et entretien électrique et d’agences en Ile-de-France.
-		</p>
-	</div>
-</li>
+{#<li class="ccard">#}
+{#	<figure class="ccard__logo">#}
+{#		<img src="/img/logos/matmut.png" alt="Logo Matmut">#}
+{#	</figure>#}
+{#	<div class="ccard__content">#}
+{#		<h2 class="ccard__title title-secondary">#}
+{#			Matmut<br>#}
+{#			<span>depuis 1988</span>#}
+{#		</h2>#}
+{#		<p class="ccard__description">#}
+{#			Création et entretien d’agences en Ile-de-France.#}
+{#		</p>#}
+{#	</div>#}
+{#</li>#}
 
 {# Imodome #}
 <li class="ccard">
@@ -32,21 +32,21 @@
 </li>
 
 {# Gecina #}
-<li class="ccard">
-	<figure class="ccard__logo">
-		<img src="/img/logos/gecina.png" alt="Logo Gecina">
-	</figure>
-	<div class="ccard__content">
-		<h2 class="ccard__title title-secondary">
-			Gecina<br>
-			<span>depuis 1998</span>
-		</h2>
-		<p class="ccard__description">
-			Maintenance électrique du parc locatif et rénovations de logements
-			familiaux et bureaux en Ile-de-France.
-		</p>
-	</div>
-</li>
+{#<li class="ccard">#}
+{#	<figure class="ccard__logo">#}
+{#		<img src="/img/logos/gecina.png" alt="Logo Gecina">#}
+{#	</figure>#}
+{#	<div class="ccard__content">#}
+{#		<h2 class="ccard__title title-secondary">#}
+{#			Gecina<br>#}
+{#			<span>depuis 1998</span>#}
+{#		</h2>#}
+{#		<p class="ccard__description">#}
+{#			Maintenance électrique du parc locatif et rénovations de logements#}
+{#			familiaux et bureaux en Ile-de-France.#}
+{#		</p>#}
+{#	</div>#}
+{#</li>#}
 
 {# Apprentis d'Auteuil #}
 <li class="ccard">
@@ -65,21 +65,21 @@
 </li>
 
 {# Campusea #}
-<li class="ccard">
-	<figure class="ccard__logo">
-		<img src="/img/logos/campusea.png" alt="Logo Campuséa">
-	</figure>
-	<div class="ccard__content">
-		<h2 class="ccard__title title-secondary">
-			Campuséa<br>
-			<span>depuis 2007</span>
-		</h2>
-		<p class="ccard__description">
-			Maintenance électrique du parc locatif (résidences étudiantes dont parties communces)
-			et rénovations de logements étudiants en Île-de-France.
-		</p>
-	</div>
-</li>
+{#<li class="ccard">#}
+{#	<figure class="ccard__logo">#}
+{#		<img src="/img/logos/campusea.png" alt="Logo Campuséa">#}
+{#	</figure>#}
+{#	<div class="ccard__content">#}
+{#		<h2 class="ccard__title title-secondary">#}
+{#			Campuséa<br>#}
+{#			<span>depuis 2007</span>#}
+{#		</h2>#}
+{#		<p class="ccard__description">#}
+{#			Maintenance électrique du parc locatif (résidences étudiantes dont parties communces)#}
+{#			et rénovations de logements étudiants en Île-de-France.#}
+{#		</p>#}
+{#	</div>#}
+{#</li>#}
 
 {# Adil93 #}
 <li class="ccard">
@@ -114,21 +114,21 @@
 </li>
 
 {# AgroParisTech #}
-<li class="ccard">
-	<figure class="ccard__logo">
-		<img src="/img/logos/agro-paris-tech.png" alt="Logo AgroParisTech">
-	</figure>
-	<div class="ccard__content">
-		<h2 class="ccard__title title-secondary">
-			AgroParisTech<br>
-			<span>depuis 2014</span>
-		</h2>
-		<p class="ccard__description">
-			Maintenance électrique du parc locatif (résidences étudiantes à
-			la Cité Internationale Universitaire de Paris et au Kremlin Bicêtre).
-		</p>
-	</div>
-</li>
+{#<li class="ccard">#}
+{#	<figure class="ccard__logo">#}
+{#		<img src="/img/logos/agro-paris-tech.png" alt="Logo AgroParisTech">#}
+{#	</figure>#}
+{#	<div class="ccard__content">#}
+{#		<h2 class="ccard__title title-secondary">#}
+{#			AgroParisTech<br>#}
+{#			<span>depuis 2014</span>#}
+{#		</h2>#}
+{#		<p class="ccard__description">#}
+{#			Maintenance électrique du parc locatif (résidences étudiantes à#}
+{#			la Cité Internationale Universitaire de Paris et au Kremlin Bicêtre).#}
+{#		</p>#}
+{#	</div>#}
+{#</li>#}
 
 {# Sauvegarde des Yvelines #}
 <li class="ccard">
