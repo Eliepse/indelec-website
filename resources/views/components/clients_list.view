@@ -1,3 +1,4 @@
+{# Matmut #}
 <li class="ccard">
 	<figure class="ccard__logo">
 		<img src="/img/logos/matmut.png" alt="Logo Matmut">
@@ -13,6 +14,7 @@
 	</div>
 </li>
 
+{# Imodome #}
 <li class="ccard">
 	<figure class="ccard__logo">
 		<img src="/img/logos/imodome.png" alt="Logo Imodome">
@@ -29,6 +31,7 @@
 	</div>
 </li>
 
+{# Gecina #}
 <li class="ccard">
 	<figure class="ccard__logo">
 		<img src="/img/logos/gecina.png" alt="Logo Gecina">
@@ -45,6 +48,7 @@
 	</div>
 </li>
 
+{# Apprentis d'Auteuil #}
 <li class="ccard">
 	<figure class="ccard__logo">
 		<img src="/img/logos/apprentis-auteuil.png" alt="Logo Fondation Apprentis d’Auteuil">
@@ -60,6 +64,7 @@
 	</div>
 </li>
 
+{# Campusea #}
 <li class="ccard">
 	<figure class="ccard__logo">
 		<img src="/img/logos/campusea.png" alt="Logo Campuséa">
@@ -76,6 +81,7 @@
 	</div>
 </li>
 
+{# Adil93 #}
 <li class="ccard">
 	<figure class="ccard__logo">
 		<img src="/img/logos/adil.svg" alt="Logo ADIL93">
@@ -91,6 +97,7 @@
 	</div>
 </li>
 
+{# Hotel le Vignon #}
 <li class="ccard">
 	<figure class="ccard__logo">
 		<img src="/img/logos/hotel-vignon.png" alt="Logo Hôtel Le Vignon">
@@ -106,6 +113,7 @@
 	</div>
 </li>
 
+{# AgroParisTech #}
 <li class="ccard">
 	<figure class="ccard__logo">
 		<img src="/img/logos/agro-paris-tech.png" alt="Logo AgroParisTech">
@@ -122,6 +130,7 @@
 	</div>
 </li>
 
+{# Sauvegarde des Yvelines #}
 <li class="ccard">
 	<figure class="ccard__logo">
 		<img src="/img/logos/sauvegarde-yvelines.svg" alt="Logo La Sauvegarde des Yvelines">
