@@ -15,7 +15,7 @@
 			<div class="container">
 				<h1 class="welcome__title">
 					<span style="display: none">INDéLEC&nbsp;|&nbsp;</span>
-					L’expert de vos installations électriques et domotiques professionnelles depuis 1956
+					L’expert de vos installations électriques et domotiques depuis 1956
 				</h1>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 		<div class="container welcome__header-content">
 			<div class="welcome__intro">
 				<p>
-					Spécialistes de l’industrie du bâtiment et du courant fort, nous conçevons, réalisons et entrenons vos
+					Spécialiste de l’industrie du bâtiment et du courant fort, nous concevons, réalisons et entrenons vos
 					installations électriques lors d’une rénovation ou d’un projet de construction.
 				</p>
 				<svg width="67" height="24"
@@ -86,8 +86,7 @@
 				</p>
 				<p>
 					Nous prenons en charge des installations électriques <abbr title="Moyen Gros Tertiaire Industrie">MGTI</abbr>
-					et <abbr title="Logement Commerce Petit Tertiaire ">LCPT</abbr> de classe 3,
-					que nous accompagnons d’un point de vue écoresponsable.
+					et <abbr title="Logement Commerce Petit Tertiaire ">LCPT</abbr>.
 				</p>
 				<svg width="40" height="38"
 				     class="symbol hide--mobile"
@@ -115,7 +114,7 @@
 				<p>
 					Depuis la création en 1956 par Christophe Riou, nous sommes une entreprise à taille humaine, avec la
 					formation et la transmission des savoirs comme valeurs essentielles. Notre confiance en nos collaborateurs
-					se traduit en notre capacité à relever des défis en France et dans le monde, sur des sites prestigieux
+					se traduit par notre capacité à relever des défis en France et dans le monde, sur des sites prestigieux
 					et avec une variété de clients qui nous suivent encore aujourd’hui.
 				</p>
 				<p>
@@ -189,6 +188,24 @@
 						<figcaption>
 							Apprentis d’Auteuil<br>
 							depuis 2015
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<div><img src="/img/logos/imodome.png" alt="Logo imodome"></div>
+						<figcaption>
+							imodome<br>
+							depuis 1992
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<div><img src="/img/logos/adil.svg" alt="Logo adil"></div>
+						<figcaption>
+							adil<br>
+							depuis 2012
 						</figcaption>
 					</figure>
 				</li>
