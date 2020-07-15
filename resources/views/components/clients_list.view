@@ -15,6 +15,22 @@
 
 <li class="ccard">
 	<figure class="ccard__logo">
+		<img src="/img/logos/imodome.png" alt="Logo Imodome">
+	</figure>
+	<div class="ccard__content">
+		<h2 class="ccard__title title-secondary">
+			Imodome<br>
+			<span>depuis 1992</span>
+		</h2>
+		<p class="ccard__description">
+			Rénovations de maisons d'architecte et entretien de services généraux dont un ensemble
+			résidentiel classé boulevard Suchet (Paris 16e).
+		</p>
+	</div>
+</li>
+
+<li class="ccard">
+	<figure class="ccard__logo">
 		<img src="/img/logos/gecina.png" alt="Logo Gecina">
 	</figure>
 	<div class="ccard__content">
@@ -56,6 +72,21 @@
 		<p class="ccard__description">
 			Maintenance électrique du parc locatif (résidences étudiantes dont parties communces)
 			et rénovations de logements étudiants en Île-de-France.
+		</p>
+	</div>
+</li>
+
+<li class="ccard">
+	<figure class="ccard__logo">
+		<img src="/img/logos/adil.svg" alt="Logo ADIL93">
+	</figure>
+	<div class="ccard__content">
+		<h2 class="ccard__title title-secondary">
+			ADIL93<br>
+			<span>depuis 2012</span>
+		</h2>
+		<p class="ccard__description">
+			Divers travaux de maintenance, d'aménagements ainsi que des dépannages au sein de leur siège.
 		</p>
 	</div>
 </li>
