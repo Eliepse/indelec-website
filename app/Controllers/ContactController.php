@@ -25,8 +25,7 @@ class ContactController
 	{
 		$transport = $this->getTransport();
 		$mailer = new Mailer($transport);
-		$mail = new ContactFromVisitorMail($request->getParsedBody());
-		$mailer->send($mail);
+		$mailer->send(new ContactFromVisitorMail($request->getParsedBody()));
 		return new RedirectResponse("/message-sent");
 	}
 
