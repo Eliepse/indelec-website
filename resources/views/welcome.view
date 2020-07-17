@@ -93,7 +93,7 @@
 				</p>
 				<p>
 					Nous prenons en charge des installations électriques <abbr title="Moyen Gros Tertiaire Industrie">MGTI</abbr>
-					et <abbr title="Logement Commerce Petit Tertiaire ">LCPT</abbr>.
+					et <abbr title="Logement Commerce Petit Tertiaire">LCPT</abbr>.
 				</p>
 				<svg width="40" height="38"
 				     class="symbol hide--mobile"
@@ -103,7 +103,7 @@
 				</svg>
 				<p class="welcome__qualifelec text--blue">
 					<strong>Qualifelec Classe 3</strong><br>
-					Logement Commerce Petit Tertiaire <br>
+					Logement Commerce Petit Tertiaire<br>
 					Moyen Gros Tertiaire Industrie
 				</p>
 			</div>
