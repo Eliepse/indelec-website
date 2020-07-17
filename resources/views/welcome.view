@@ -35,9 +35,12 @@
 			</div>
 			<div class="welcome__services">
 				<div class="welcome__header-logos">
-					<img src="/img/logos/qualifelec.png" alt="Logo Qualifelec"/>
-					<img src="/img/logos/ffb.png" alt="Logo Fédération Française du Bâtiment"/>
-					<img src="/img/logos/cseee.png" alt="Logo Chambre Syndicale des Entreprises d’Équipements Électrique"/>
+					<span class="welcome__header-logosLabel">Membre de</span>
+					<div>
+						<img src="/img/logos/qualifelec.png" alt="Logo Qualifelec"/>
+						<img src="/img/logos/ffb.png" alt="Logo Fédération Française du Bâtiment"/>
+						<img src="/img/logos/cseee.png" alt="Logo Chambre Syndicale des Entreprises d’Équipements Électrique"/>
+					</div>
 				</div>
 				<ul>
 					<li>
