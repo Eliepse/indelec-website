@@ -23,7 +23,7 @@ class ContactFromVisitorMail extends Email
 		$this->subject(env("MAIL_SUBJECTS_PREFFIX") . "Nouveau message d'un visiteur");
 
 		$this->data = array_merge($data, [
-			"created_at" => date("d/m/Y à H:i"),
+			"created_at" => date("d/m/Y"),
 			"subject" => $this->getSubject(),
 		]);
 

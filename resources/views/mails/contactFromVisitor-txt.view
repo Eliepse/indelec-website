@@ -2,8 +2,12 @@ Bonjour,
 Vous avez reçu un nouveau message d'un visiteur du site web.
 
 De {{ $name }} ({{ $email }}, {{ $phone }}),
-pour le compte de la société {{ $company }}
+pour le compte de la société {{ $company }},
 le {{ $created_at }}
+
+
 =========================================
+
+
 {{ $message }}
 
