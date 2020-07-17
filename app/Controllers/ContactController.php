@@ -8,7 +8,9 @@ use Slim\Psr7\Request;
 use Slim\Psr7\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\Transport\AbstractTransport;
 use Symfony\Component\Mailer\Transport\SendmailTransport;
+use Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
 
 class ContactController
 {
@@ -21,11 +23,31 @@ class ContactController
 	 */
 	public function sendMail(Request $request): Response
 	{
-		$transport = new SendmailTransport(env("SENDMAIL_PATH") . " -bs");
+		$transport = $this->getTransport();
 		$mailer = new Mailer($transport);
 		$mail = new ContactFromVisitorMail($request->getParsedBody());
 		$mailer->send($mail);
 		return new RedirectResponse("/message-sent");
+	}
+
+
+	/**
+	 * @return AbstractTransport
+	 * @throws \ErrorException
+	 */
+	private function getTransport(): AbstractTransport
+	{
+		if ("sendmail" === env("MAIL_DRIVER")) {
+			return new SendmailTransport(env("SENDMAIL_PATH") . " -bs");
+		}
+
+		if ("smtp" === env("MAIL_DRIVER")) {
+			$transport = new EsmtpTransport(env("MAIL_SERVER"), intval(env("MAIL_PORT")), env("MAIL_TLS"));
+			$transport->setUsername(env("MAIL_USERNAME", ""));
+			$transport->setPassword(env("MAIL_PASSWORD", ""));
+			return $transport;
+		}
+		throw new \ErrorException("Mail driver (MAIL_DRIVER in .env) not specified correctly or unsupported");
 	}
 
 

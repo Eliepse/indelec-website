@@ -26,6 +26,13 @@ $dotenv->required('META_TITLE')->notEmpty();
 $dotenv->required('META_DESCRIPTION')->notEmpty();
 $dotenv->required('CONTACT_TARGET_MAIL')->notEmpty();
 $dotenv->required('MAIL_FROM_ADDRESS')->notEmpty();
+$dotenv->required('MAIL_DRIVER')->notEmpty()->allowedValues(['sendmail', 'smtp']);
+
+if("smtp" === env("MAIL_DRIVER")) {
+	$dotenv->required("MAIL_SERVER")->notEmpty();
+	$dotenv->required("MAIL_PORT")->isInteger();
+	$dotenv->required("MAIL_TLS")->isBoolean();
+}
 
 $sessionMiddleware = (new PhpSession())
 	->name(env("APP_SESSION_PREFIX", "simpleApp") . "_session")
