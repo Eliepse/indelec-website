@@ -33,7 +33,7 @@ module.exports = (env, argv) => {
 			proxy: {
 				'/': 'http://127.0.0.1:8080'
 			},
-			port: 9000,
+			port: 9001,
 			writeToDisk: true
 		},
 		module: {
