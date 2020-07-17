@@ -11,7 +11,7 @@ use Slim\Psr7\Response;
 
 class ValidateContactFormMiddleware
 {
-	private array $requiredFields = ["name", "email", "phone", "message"];
+	private array $requiredFields = ["name", "company", "email", "phone", "message"];
 	private array $errors = [];
 
 
@@ -30,6 +30,7 @@ class ValidateContactFormMiddleware
 		}
 
 		$this->validateName($inputs['name']);
+		$this->validateCompany($inputs['company']);
 		$this->validateEmail($inputs['email']);
 		$this->validatePhone($inputs['phone']);
 		$this->validateMessage($inputs['message']);
@@ -61,6 +62,14 @@ class ValidateContactFormMiddleware
 
 
 	private function validateName(string $name): void
+	{
+		$length = mb_strlen($name);
+		if ($length < 5) $this->errors["name"] = "Au moins 5 caractères doivent être indiqués.";
+		if ($length > 50) $this->errors["name"] = "Ce champ doit comporter moins de 50 caractères.";
+	}
+
+
+	private function validateCompany(string $name): void
 	{
 		$length = mb_strlen($name);
 		if ($length < 5) $this->errors["name"] = "Au moins 5 caractères doivent être indiqués.";

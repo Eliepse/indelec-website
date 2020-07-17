@@ -15,6 +15,21 @@
 			<div class="input__helper">{{ $message }}</div>
 		{% endfor %}
 	</div>
+	<div class="form__input-group {% if errors("name") %} form__input-group--invalid {% endif %}">
+		<label class="form__label" for="contact-company">Société</label>
+		<input type="text"
+		       name="company"
+		       class="form__control"
+		       id="contact-company"
+		       placeholder="Raison sociale de votre entreprise"
+		       required
+		       maxlength="50"
+		       value="{{ old("company") }}"
+		>
+		{% for errors("company") as $message %}
+			<div class="input__helper">{{ $message }}</div>
+		{% endfor %}
+	</div>
 	<div class="form__input-group {% if errors("email") %} form__input-group--invalid {% endif %}">
 		<label class="form__label" for="contact-email">Email</label>
 		<input type="email"

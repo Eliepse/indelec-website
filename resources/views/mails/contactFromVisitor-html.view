@@ -1,4 +1,4 @@
-<html>
+<html lang="fr">
 <head>
 	<meta charset="UTF-8">
 	<title>{{ $subject }}</title>
@@ -13,6 +13,7 @@
 
 <p>
 	De <strong>{{ $name }}</strong> (<a href="mailto:{{ $email }}">{{ $email }}</a>, {{ $phone }}),<br>
+	pour le compte de la société <i>{{ $company }}</i><br>
 	le {{ $created_at }}
 </p>
 
