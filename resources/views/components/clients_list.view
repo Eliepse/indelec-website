@@ -51,12 +51,12 @@
 {# Apprentis d'Auteuil #}
 <li class="ccard">
 	<figure class="ccard__logo">
-		<img src="/img/logos/apprentis-auteuil.png" alt="Logo Fondation Apprentis d’Auteuil">
+		<img src="/img/logos/apprentis-auteuil.png" alt="Logo Fondation des Apprentis d’Auteuil">
 	</figure>
 	<div class="ccard__content">
 		<h2 class="ccard__title title-secondary">
-			Fondation Apprentis d’Auteuil<br>
-			<span>depuis 1998</span>
+			Fondation des Apprentis d’Auteuil<br>
+			<span>depuis 2015</span>
 		</h2>
 		<p class="ccard__description">
 			Divers travaux d’aménagement ainsi que l’entretien électrique des installations réalisées.
