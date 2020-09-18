@@ -39,6 +39,8 @@ $sessionMiddleware = (new PhpSession())
 	->options([
 		'use_strict_mode' => true,
 		'cookie_httponly' => true,
+		'cookie_samesite' => 'strict',
+		'cookie_secure' => env("APP_ENV") === "production",
 		'use_only_cookies' => true,
 		'use_trans_sid' => true,
 		'sid_length' => 64,
