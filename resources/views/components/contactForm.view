@@ -1,9 +1,8 @@
 <form class="form" method="POST" action="/contact">
-	<!-- honeypot -->
 	<div class="form__input-group {% if errors("name") %} form__input-group--invalid {% endif %}">
 		<label class="form__label" for="contact-name">Nom et Prénom</label>
 		<input type="text"
-		       name="name"
+		       name="honeypot:name"
 		       class="form__control"
 		       id="contact-name"
 		       placeholder="Vos nom et prénom..."
@@ -18,7 +17,7 @@
 	<div class="form__input-group {% if errors("name") %} form__input-group--invalid {% endif %}">
 		<label class="form__label" for="contact-company">Société</label>
 		<input type="text"
-		       name="company"
+		       name="honeypot:company"
 		       class="form__control"
 		       id="contact-company"
 		       placeholder="Raison sociale de votre entreprise"
@@ -33,7 +32,7 @@
 	<div class="form__input-group {% if errors("email") %} form__input-group--invalid {% endif %}">
 		<label class="form__label" for="contact-email">Email</label>
 		<input type="email"
-		       name="email"
+		       name="honeypot:email"
 		       class="form__control"
 		       id="contact-email"
 		       placeholder="votre-email@exemple.fr"
@@ -48,7 +47,7 @@
 	<div class="form__input-group {% if errors("phone") %} form__input-group--invalid {% endif %}">
 		<label class="form__label" for="contact-phone">Téléphone</label>
 		<input type="phone"
-		       name="phone"
+		       name="honeypot:phone"
 		       class="form__control"
 		       id="contact-phone"
 		       pattern="[0-9 +()]+"
