@@ -1,8 +1,8 @@
 {
     "require" : {
-        "php" : "^7.4",
+        "php" : "^8.0",
         "symfony/mailer": "^5.0",
-        "eliepse/argile-honeypot": "^1.1",
+        "eliepse/argile-honeypot": "^2.0",
         "eliepse/argile" : "dev-master"
     },
     "autoload" : {
