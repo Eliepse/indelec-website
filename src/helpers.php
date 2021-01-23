@@ -1,12 +1,13 @@
 <?php
 /** @noinspection PhpUnhandledExceptionInspection */
 
-use App\App;
-use Fig\Http\Message\StatusCodeInterface;
+use Eliepse\Argile\App;
+use Eliepse\Argile\Http\Responses\ViewResponse;
+use Eliepse\Argile\Support\Asset;
+use Eliepse\Argile\Support\Environment;
 use Slim\Flash\Messages;
-use Slim\Psr7\Response;
 
-if (!function_exists("env")) {
+if (! function_exists("env")) {
 	/**
 	 * @param string $key
 	 * @param mixed|null $default
@@ -15,37 +16,29 @@ if (!function_exists("env")) {
 	 */
 	function env(string $key, $default = null)
 	{
-		if (!isset($_ENV[ $key ])) {
-			return $default;
-		}
-
-		$value = getenv($key);
-
-		switch (strtolower($value)) {
-			case 'true':
-				return true;
-			case 'false':
-				return false;
-			case 'null':
-				return null;
-		}
-
-//		if (Str::startsWith($value, '"') && Str::endsWith($value, '"')) {
-//			return substr($value, 1, -1);
-//		}
-
-		return $value;
+		return Environment::get($key, $default);
 	}
 }
 
-if (!function_exists('app')) {
-	function app(): App
+if (! function_exists('app')) {
+	/**
+	 * @param string|null $service_name
+	 *
+	 * @return App|mixed
+	 * @throws ErrorException
+	 * @throws \DI\DependencyException
+	 * @throws \DI\NotFoundException
+	 */
+	function app(string $service_name = null)
 	{
+		if (is_string($service_name)) {
+			return App::getInstance()->container->get($service_name);
+		}
 		return App::getInstance();
 	}
 }
 
-if (!function_exists('webpack')) {
+if (! function_exists('webpack')) {
 	/**
 	 * @param string $asset_path
 	 * @param string|null $default
@@ -55,46 +48,25 @@ if (!function_exists('webpack')) {
 	 */
 	function webpack(string $asset_path, ?string $default = null): string
 	{
-		$m_path = app()->public("manifest.json");
-		if (!file_exists($m_path)) {
-			if (!is_null($default)) return $default;
-			throw new ErrorException("Weback generated manifest (public/manifest.json) not found at $m_path.");
-		}
-
-		$manifest = json_decode(file_get_contents($m_path), true);
-		if (!array_key_exists($asset_path, $manifest)) {
-			if (!is_null($default)) return $default;
-			throw new Error("$asset_path not found in webpack generated manifest.");
-		}
-
-		return $manifest[ $asset_path ];
+		return Asset::webpack($asset_path, $default);
 	}
 }
 
-if (!function_exists("view")) {
-	function view(string $name, array $values = []): Response
+if (! function_exists("view")) {
+	function view(string $name, array $values = []): ViewResponse
 	{
-		$engine = App::getInstance()->getTemplateEngine();
-		$name .= pathinfo($name, PATHINFO_EXTENSION) ?: ".view";
-		$response = new Response(StatusCodeInterface::STATUS_OK);
-
-		foreach ($values as $key => $value) {
-			$engine->addGlobal($key, $value);
-		}
-
-		$response->getBody()->write($engine->render($name));
-		return $response;
+		return new ViewResponse($name, $values);
 	}
 }
 
-if (!function_exists('flash')) {
+if (! function_exists('flash')) {
 	function flash(): Messages
 	{
-		return App::getInstance()->getApp()->getContainer()->get(Messages::class);
+		return App::getInstance()->container->get(Messages::class);
 	}
 }
 
-if (!function_exists('errors')) {
+if (! function_exists('errors')) {
 	function errors(string $key): array
 	{
 		$all_errors = flash()->getFirstMessage("errors");
@@ -102,7 +74,7 @@ if (!function_exists('errors')) {
 		if (empty($all_errors))
 			return [];
 
-		if (!isset($all_errors[ $key ]))
+		if (! isset($all_errors[ $key ]))
 			return [];
 
 		$key_errors = $all_errors[ $key ];
@@ -114,7 +86,7 @@ if (!function_exists('errors')) {
 	}
 }
 
-if (!function_exists("old")) {
+if (! function_exists("old")) {
 	/**
 	 * @param string $key
 	 * @param mixed|string|null $default
