@@ -62,8 +62,11 @@ $slim->addMiddleware(new SecureFrameOptionMiddleware());
 $slim->addMiddleware(
 	new ContentSecurityPolicyMiddleware(
 		! Environment::isProduction(),
-		"'self'",
-		["style-src" => "'self' 'unsafe-inline'"]
+		"'self' https://umami.eliepse.fr/",
+		[
+			"style-src" => "'self' 'unsafe-inline'",
+			"script-src" => "'self' 'unsafe-inline'",
+		]
 	)
 );
 $slim->addMiddleware(new MaintenanceMiddleware(! env("APP_ONLINE")));
