@@ -1,3 +1,6 @@
+<?php
+use Eliepse\Argile\Honeypot\Support\HoneypotManager;
+?>
 <form class="form" method="POST" action="/contact">
 	<div class="form__input-group {% if errors("name") %} form__input-group--invalid {% endif %}">
 		<label class="form__label" for="contact-name">Nom et Prénom</label>
@@ -8,7 +11,7 @@
 		       placeholder="Vos nom et prénom..."
 		       required
 		       maxlength="50"
-		       value="{{ old("name") }}"
+		       value="{{ old(HoneypotManager::hash("name")) }}"
 		>
 		{% for errors("name") as $message %}
 			<div class="input__helper">{{ $message }}</div>
@@ -23,7 +26,7 @@
 		       placeholder="Raison sociale de votre entreprise"
 		       required
 		       maxlength="50"
-		       value="{{ old("company") }}"
+		       value="{{ old(HoneypotManager::hash("company")) }}"
 		>
 		{% for errors("company") as $message %}
 			<div class="input__helper">{{ $message }}</div>
@@ -38,7 +41,7 @@
 		       placeholder="votre-email@exemple.fr"
 		       required
 		       maxlength="200"
-		       value="{{ old("email") }}"
+		       value="{{ old(HoneypotManager::hash("email")) }}"
 		>
 		{% for errors("email") as $message %}
 			<div class="input__helper">{{ $message }}</div>
@@ -54,7 +57,7 @@
 		       placeholder="01 23 45 67 89"
 		       required
 		       maxlength="32"
-		       value="{{ old("phone") }}"
+		       value="{{ old(HoneypotManager::hash("phone")) }}"
 		>
 		{% for errors("phone") as $message %}
 			<div class="input__helper">{{ $message }}</div>

@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Mails\ContactFromVisitorMail;
-use App\RedirectResponse;
+use Eliepse\Argile\Http\Responses\RedirectResponse;
 use Slim\Psr7\Request;
 use Slim\Psr7\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;

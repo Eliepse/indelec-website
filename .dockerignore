@@ -1,0 +1,11 @@
+# Complation assets
+public/css/
+public/fonts/
+public/images/
+public/img/
+public/js/
+public/manifest.json
+
+# Development files
+vendor/
+node_modules/
