@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+	"@context" : "http://schema.org/",
+	"@type" : "Electrician",
+	"name" : "INDéLEC",
+	"description" : "Spécialistes de l’industrie, du bâtiment et du courant fort, nous concevons, réalisons et entretenons vos installations électriques depuis 1956.",
+	"openingHours" : [
+	  "Mo-Fr 08:00-12:00",
+	  "Mo-Fr 13:30-18:00"
+	],
+	"telephone" : "01 48 44 00 36",
+	"faxNumber" : "01 48 44 00 34",
+	"image" : "{{ env('APP_URL') }}/img/social-cards/twitter-card.jpg",
+	"address" : {
+    "@type" : "PostalAddress",
+    "addressCountry" : "France",
+    "addressLocality" : "Noisy-Le-Sec",
+    "postalCode" : "93130",
+    "streetAddress" : "41 bis - 43 Boulevard Roger Salengro"
+	},
+	"url" : "https://indelecsa.fr",
+	"founder" : {
+    "@type" : "Person",
+    "name" : "Christophe RIOU"
+	},
+	"foundingDate" : "1956-09-12"
+}
+</script>

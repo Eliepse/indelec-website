@@ -12,7 +12,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/img/logos/favicon-16x16.png">
 
 {# OpenGraph #}
-{#<meta property="fb:app_id" content="123456789">#}
+{# <meta property="fb:app_id" content="123456789"> #}
 <meta property="og:url" content="{{ env('APP_URL') }}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ env('META_TITLE') }}{{ $pageTitle ?? "" }}">
@@ -26,8 +26,8 @@
 
 {# Twitter card #}
 <meta name="twitter:card" content="summary_large_image">
-{#<meta name="twitter:site" content="@site_account">#}
-{#<meta name="twitter:creator" content="@individual_account">#}
+{# <meta name="twitter:site" content="@site_account"> #}
+{# <meta name="twitter:creator" content="@individual_account"> #}
 <meta name="twitter:url" content="{{ env('APP_URL') }}">
 <meta name="twitter:title" content="{{ env('META_TITLE') }}{{ $pageTitle ?? "" }}">
 <meta name="twitter:description" content="{{ env('META_DESCRIPTION') }}">
@@ -44,3 +44,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="{{ webpack("css/styles.css") }}" type="text/css">
 <?= env('META_ANALYTICS_SCRIPT', "") ?>
+
+{# Structured data #}
+{% include "json-ld/company.view" %}
