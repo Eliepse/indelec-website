@@ -3,7 +3,7 @@
         "php" : "^8.0",
         "symfony/mailer": "^5.0",
         "eliepse/argile-honeypot": "^2.0",
-        "eliepse/argile" : "dev-master"
+         "eliepse/argile-framework" : "0.4.3"
     },
     "autoload" : {
         "files" : [
