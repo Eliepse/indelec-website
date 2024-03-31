@@ -1,0 +1,41 @@
+<?php
+declare(strict_types=1);
+mb_internal_encoding("UTF-8");
+
+use Eliepse\Argile\Commands\ClearCacheCommand;
+use Eliepse\Argile\Commands\ClearCompiledConfigsCommand;
+use Eliepse\Argile\Commands\ClearCompiledEnvironmentCommand;
+use Eliepse\Argile\Commands\ClearCompiledRoutesCommand;
+use Eliepse\Argile\Commands\ClearCompiledViewsCommand;
+use Eliepse\Argile\Commands\CompileConfigsCommand;
+use Eliepse\Argile\Commands\CompileEnvironmentCommand;
+use Eliepse\Argile\Commands\CompileRoutesCommand;
+use Eliepse\Argile\Commands\CompileViewsCommand;
+use Eliepse\Argile\Core\Application;
+
+require __DIR__ . "/bootstrap/bootstrap.php";
+
+$app = Application::getInstance();
+
+// Setup routes
+include_once __DIR__ . '/routes/web.php';
+
+$commandClasses = [
+	ClearCacheCommand::class,
+	ClearCompiledConfigsCommand::class,
+	ClearCompiledEnvironmentCommand::class,
+	ClearCompiledRoutesCommand::class,
+	ClearCompiledViewsCommand::class,
+	CompileConfigsCommand::class,
+	CompileEnvironmentCommand::class,
+	CompileRoutesCommand::class,
+	CompileViewsCommand::class,
+];
+
+$console = new \Symfony\Component\Console\Application();
+
+foreach ($commandClasses as $commandClass) {
+	$console->add($app->container->make($commandClass));
+}
+
+$console->run();

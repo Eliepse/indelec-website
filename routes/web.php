@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \DI\Bridge\Slim\Bridge $router
+ * @var Bridge $router
  */
 
 use App\Controllers\AboutController;
@@ -10,20 +10,22 @@ use App\Controllers\ServicesController;
 use App\Controllers\SitemapController;
 use App\Controllers\WelcomeController;
 use App\Middlewares\ValidateContactFormMiddleware;
+use DI\Bridge\Slim\Bridge;
 use Eliepse\Argile\Honeypot\Http\Middleware\HoneypotRequestMiddleware;
 use Eliepse\Argile\Honeypot\Http\Middleware\HoneypotResponseMiddleware;
+use Eliepse\Argile\Http\Router;
 
 
-$router->get('/', WelcomeController::class)
+Router::get('/', WelcomeController::class)
 	->addMiddleware(new HoneypotResponseMiddleware());
 
-$router->get('/about', AboutController::class);
-$router->get('/services', ServicesController::class);
-$router->get('/clients', ClientsController::class);
+Router::get('/about', AboutController::class);
+Router::get('/services', ServicesController::class);
+Router::get('/clients', ClientsController::class);
 
-$router->post('/contact', [ContactController::class, 'sendMail'])
+Router::post('/contact', [ContactController::class, 'sendMail'])
 	->addMiddleware(new ValidateContactFormMiddleware())
 	->addMiddleware(new HoneypotRequestMiddleware());
 
-$router->get("/message-sent", [ContactController::class, 'showSuccess']);
-$router->get("/sitemap.xml", SitemapController::class);
+Router::get("/message-sent", [ContactController::class, 'showSuccess']);
+Router::get("/sitemap.xml", SitemapController::class);
