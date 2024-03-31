@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  php:
+    restart: unless-stopped
+    build:
+      target: prod
+    volumes: !override
+      - storage:/app/storage
+      - ./storage/logs:/app/storage/logs
+      - caddy_data:/data
+      - caddy_config:/config
