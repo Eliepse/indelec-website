@@ -1,7 +1,3 @@
 .idea
-
-/storage
-
-# Development files
-#vendor/
-node_modules/
+storage
+node_modules

@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     build:
       target: prod
+    expose: !reset []
     volumes: !override
       - storage:/app/storage
       - ./storage/logs:/app/storage/logs

@@ -15,7 +15,7 @@ FROM common as prod
 COPY . /app
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"; \
-    mv ./docker/php/99-custom-prod.ini "$PHP_INI_DIR/conf.d/"; \
+    cp docker/php/99-custom-prod.ini "$PHP_INI_DIR/conf.d/"; \
     adduser -D ${USER}; \
     # Ajouter la capacité supplémentaire de se lier aux ports 80 et 443
     setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/frankenphp; \
@@ -37,7 +37,9 @@ RUN mkdir /app/storage; \
 
 FROM common as dev
 
-RUN install-php-extensions xdebug
+RUN #install-php-extensions xdebug
+
+COPY . /app
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"; \
-    mv ./docker/php/99-custom-prod.ini "$PHP_INI_DIR/conf.d/"; \
+    cp docker/php/99-custom-dev.ini "$PHP_INI_DIR/conf.d/"; \
